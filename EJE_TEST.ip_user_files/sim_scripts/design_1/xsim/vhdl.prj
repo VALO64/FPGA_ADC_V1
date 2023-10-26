@@ -1,0 +1,5 @@
+vhdl xil_defaultlib  \
+"../../../bd/design_1/ipshared/41ad/multiplexers_1.vhd" \
+"../../../bd/design_1/ip/design_1_multiplexers_1_0_0/sim/design_1_multiplexers_1_0_0.vhd" \
+
+nosort

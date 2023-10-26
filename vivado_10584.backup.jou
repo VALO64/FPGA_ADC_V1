@@ -1,0 +1,69 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Wed Oct 25 10:05:13 2023
+# Process ID: 10584
+# Current directory: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3544 D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.xpr
+# Log file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/vivado.log
+# Journal file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.xpr}
+update_compile_order -fileset sources_1
+generate_target all [get_files  {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}]
+catch { config_ip_cache -export [get_ips -all design_1_xadc_wiz_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_clk_wiz_0_0] }
+catch { config_ip_cache -export [get_ips -all design_1_multiplexers_1_0_0] }
+export_ip_user_files -of_objects [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}]
+launch_runs -jobs 4 {design_1_xadc_wiz_0_0_synth_1 design_1_clk_wiz_0_0_synth_1 design_1_multiplexers_1_0_0_synth_1}
+export_simulation -of_objects [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -directory {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.ip_user_files/sim_scripts} -ip_user_files_dir {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.ip_user_files} -ipstatic_source_dir {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.ip_user_files/ipstatic} -lib_map_path [list {modelsim=D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.cache/compile_simlib/modelsim} {questa=D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.cache/compile_simlib/questa} {riviera=D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.cache/compile_simlib/riviera} {activehdl=D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+set_property -dict [list CONFIG.USE_DYN_RECONFIG {false} CONFIG.CLKOUT1_REQUESTED_OUT_FREQ {104.000} CONFIG.USE_LOCKED {false} CONFIG.AXI_DRP {false} CONFIG.PHASE_DUTY_CONFIG {false} CONFIG.USE_RESET {true} CONFIG.MMCM_DIVCLK_DIVIDE {5} CONFIG.MMCM_CLKFBOUT_MULT_F {39.000} CONFIG.MMCM_CLKOUT0_DIVIDE_F {9.375} CONFIG.CLKOUT1_JITTER {218.490} CONFIG.CLKOUT1_PHASE_ERROR {240.486}] [get_bd_cells clk_wiz_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.USE_RESET {false}] [get_bd_cells clk_wiz_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.DCLK_FREQUENCY {104} CONFIG.ADC_CONVERSION_RATE {1000}] [get_bd_cells xadc_wiz_0]
+endgroup
+startgroup
+endgroup
+save_bd_design
+delete_bd_objs [get_bd_nets vn_in_0_1] [get_bd_ports vn_in_0]
+delete_bd_objs [get_bd_nets vp_in_0_1] [get_bd_ports vp_in_0]
+startgroup
+make_bd_pins_external  [get_bd_pins xadc_wiz_0/vn_in]
+endgroup
+startgroup
+make_bd_pins_external  [get_bd_pins xadc_wiz_0/vp_in]
+endgroup
+set_property location {1 235 166} [get_bd_cells clk_wiz_0]
+set_property location {1 260 202} [get_bd_cells clk_wiz_0]
+set_property location {-54 200} [get_bd_ports sys_clock]
+set_property location {-53 561} [get_bd_ports sw0]
+set_property location {-56 575} [get_bd_ports sw0]
+set_property location {24 202} [get_bd_ports sys_clock]
+startgroup
+set_property -dict [list CONFIG.CONST_VAL {0}] [get_bd_cells xlconstant_2]
+endgroup
+startgroup
+set_property -dict [list CONFIG.CONST_VAL {3}] [get_bd_cells xlconstant_0]
+endgroup
+save_bd_design
+set_property USER_COMMENTS.comment_0 {Enter Comments here}  [current_bd_design]
+set_property USER_COMMENTS.comment_0 {Constant 0 tiene una direccion = 3
+}  [current_bd_design]
+startgroup
+set_property -dict [list CONFIG.DIN_TO {8} CONFIG.DIN_FROM {15} CONFIG.DIN_FROM {15} CONFIG.DOUT_WIDTH {8}] [get_bd_cells xlslice_0]
+endgroup
+set_property USER_COMMENTS.comment_1 {Enter Comments here}  [current_bd_design]
+set_property USER_COMMENTS.comment_1 {8 bits menos significativos
+}  [current_bd_design]
+set_property USER_COMMENTS.comment_2 {Enter Comments here}  [current_bd_design]
+set_property USER_COMMENTS.comment_2 {8 bits mas significativos}  [current_bd_design]
+validate_bd_design
+save_bd_design
