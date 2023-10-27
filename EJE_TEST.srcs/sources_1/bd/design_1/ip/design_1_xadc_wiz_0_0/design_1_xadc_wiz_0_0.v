@@ -146,7 +146,7 @@ module design_1_xadc_wiz_0_0
 XADC #(
         .INIT_40(16'h3103), // config reg 0
         .INIT_41(16'h31AF), // config reg 1
-        .INIT_42(16'h0200), // config reg 2
+        .INIT_42(16'h0800), // config reg 2
         .INIT_48(16'h0100), // Sequencer channel selection
         .INIT_49(16'h0000), // Sequencer channel selection
         .INIT_4A(16'h0000), // Sequencer Average selection

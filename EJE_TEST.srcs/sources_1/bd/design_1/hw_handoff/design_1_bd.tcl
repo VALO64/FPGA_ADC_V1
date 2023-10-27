@@ -266,7 +266,7 @@ proc create_root_design { parentCell } {
   set xadc_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xadc_wiz:3.3 xadc_wiz_0 ]
   set_property -dict [ list \
    CONFIG.ACQUISITION_TIME {10} \
-   CONFIG.ADC_CONVERSION_RATE {154} \
+   CONFIG.ADC_CONVERSION_RATE {39} \
    CONFIG.CHANNEL_AVERAGING {256} \
    CONFIG.DCLK_FREQUENCY {8} \
    CONFIG.ENABLE_RESET {true} \
@@ -302,20 +302,11 @@ proc create_root_design { parentCell } {
   # Create instance: xlslice_0, and set properties
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
   set_property -dict [ list \
-   CONFIG.DIN_FROM {14} \
-   CONFIG.DIN_TO {8} \
+   CONFIG.DIN_FROM {15} \
+   CONFIG.DIN_TO {4} \
    CONFIG.DIN_WIDTH {16} \
-   CONFIG.DOUT_WIDTH {7} \
+   CONFIG.DOUT_WIDTH {12} \
  ] $xlslice_0
-
-  # Create instance: xlslice_1, and set properties
-  set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
-  set_property -dict [ list \
-   CONFIG.DIN_FROM {6} \
-   CONFIG.DIN_TO {0} \
-   CONFIG.DIN_WIDTH {16} \
-   CONFIG.DOUT_WIDTH {7} \
- ] $xlslice_1
 
   # Create port connections
   connect_bd_net -net BinBCD_0_Decenas [get_bd_pins BinBCD_0/Decenas] [get_bd_pins Multiplexor_0/Decenas]
@@ -331,7 +322,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net reset_1 [get_bd_ports reset] [get_bd_pins xadc_wiz_0/reset_in]
   connect_bd_net -net vn_in_0_1 [get_bd_ports vn_in_0] [get_bd_pins xadc_wiz_0/vn_in]
   connect_bd_net -net vp_in_0_1 [get_bd_ports vp_in_0] [get_bd_pins xadc_wiz_0/vp_in]
-  connect_bd_net -net xadc_wiz_0_do_out [get_bd_pins xadc_wiz_0/do_out] [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
+  connect_bd_net -net xadc_wiz_0_do_out [get_bd_pins xadc_wiz_0/do_out] [get_bd_pins xlslice_0/Din]
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xadc_wiz_0/daddr_in] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins xadc_wiz_0/den_in] [get_bd_pins xlconstant_1/dout]
   connect_bd_net -net xlconstant_2_dout [get_bd_pins xadc_wiz_0/dwe_in] [get_bd_pins xlconstant_2/dout]

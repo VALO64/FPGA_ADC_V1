@@ -15,12 +15,11 @@
       "xlconstant_1": "",
       "xlconstant_2": "",
       "xlslice_0": "",
-      "xlslice_1": "",
       "Divisor_Freccuencia_0": "",
       "Decodificador_BCD_7S_0": "",
-      "Cuantificador_0": "",
       "BinBCD_0": "",
-      "Multiplexor_0": ""
+      "Multiplexor_0": "",
+      "Cuantificador_0": ""
     },
     "ports": {
       "vn_in_0": {
@@ -71,7 +70,7 @@
             "value": "10"
           },
           "ADC_CONVERSION_RATE": {
-            "value": "154"
+            "value": "39"
           },
           "CHANNEL_AVERAGING": {
             "value": "256"
@@ -213,34 +212,16 @@
         "xci_name": "design_1_xlslice_0_0",
         "parameters": {
           "DIN_FROM": {
-            "value": "14"
+            "value": "15"
           },
           "DIN_TO": {
-            "value": "8"
+            "value": "4"
           },
           "DIN_WIDTH": {
             "value": "16"
           },
           "DOUT_WIDTH": {
-            "value": "7"
-          }
-        }
-      },
-      "xlslice_1": {
-        "vlnv": "xilinx.com:ip:xlslice:1.0",
-        "xci_name": "design_1_xlslice_1_0",
-        "parameters": {
-          "DIN_FROM": {
-            "value": "6"
-          },
-          "DIN_TO": {
-            "value": "0"
-          },
-          "DIN_WIDTH": {
-            "value": "16"
-          },
-          "DOUT_WIDTH": {
-            "value": "7"
+            "value": "12"
           }
         }
       },
@@ -291,27 +272,6 @@
             "right": "0"
           },
           "Salidas": {
-            "direction": "O",
-            "left": "6",
-            "right": "0"
-          }
-        }
-      },
-      "Cuantificador_0": {
-        "vlnv": "xilinx.com:module_ref:Cuantificador:1.0",
-        "xci_name": "design_1_Cuantificador_0_0",
-        "reference_info": {
-          "ref_type": "hdl",
-          "ref_name": "Cuantificador",
-          "boundary_crc": "0x0"
-        },
-        "ports": {
-          "ADC": {
-            "direction": "I",
-            "left": "6",
-            "right": "0"
-          },
-          "Binario": {
             "direction": "O",
             "left": "6",
             "right": "0"
@@ -376,6 +336,27 @@
             "right": "0"
           }
         }
+      },
+      "Cuantificador_0": {
+        "vlnv": "xilinx.com:module_ref:Cuantificador:1.0",
+        "xci_name": "design_1_Cuantificador_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Cuantificador",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ADC": {
+            "direction": "I",
+            "left": "11",
+            "right": "0"
+          },
+          "Binario": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
       }
     },
     "nets": {
@@ -401,13 +382,6 @@
         "ports": [
           "xlconstant_2/dout",
           "xadc_wiz_0/dwe_in"
-        ]
-      },
-      "xadc_wiz_0_do_out": {
-        "ports": [
-          "xadc_wiz_0/do_out",
-          "xlslice_0/Din",
-          "xlslice_1/Din"
         ]
       },
       "vn_in_0_1": {
@@ -486,6 +460,12 @@
         "ports": [
           "xlslice_0/Dout",
           "Cuantificador_0/ADC"
+        ]
+      },
+      "xadc_wiz_0_do_out": {
+        "ports": [
+          "xadc_wiz_0/do_out",
+          "xlslice_0/Din"
         ]
       }
     },

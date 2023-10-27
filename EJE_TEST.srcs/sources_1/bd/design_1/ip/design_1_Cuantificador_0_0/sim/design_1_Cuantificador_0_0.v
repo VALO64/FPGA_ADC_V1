@@ -59,7 +59,7 @@ module design_1_Cuantificador_0_0 (
   Binario
 );
 
-input wire [6 : 0] ADC;
+input wire [11 : 0] ADC;
 output wire [6 : 0] Binario;
 
   Cuantificador inst (

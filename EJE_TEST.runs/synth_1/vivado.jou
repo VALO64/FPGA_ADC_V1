@@ -2,8 +2,8 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Oct 26 18:14:52 2023
-# Process ID: 17056
+# Start of session at: Fri Oct 27 09:58:09 2023
+# Process ID: 5188
 # Current directory: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/design_1_wrapper.vds

@@ -2,10 +2,10 @@
 # Vivado v2019.1 (64-bit)
 # SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
 # IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
-# Start of session at: Thu Oct 26 17:05:35 2023
-# Process ID: 25304
+# Start of session at: Fri Oct 27 09:24:14 2023
+# Process ID: 9036
 # Current directory: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4280 D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9476 D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.xpr
 # Log file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/vivado.log
 # Journal file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST\vivado.jou
 #-----------------------------------------------------------
@@ -16,14 +16,24 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2019.1/data/ip'.
-open_project: Time (s): cpu = 00:00:26 ; elapsed = 00:00:12 . Memory (MB): peak = 715.414 ; gain = 75.414
+open_project: Time (s): cpu = 00:00:43 ; elapsed = 00:00:36 . Memory (MB): peak = 709.227 ; gain = 103.953
 update_compile_order -fileset sources_1
-reset_run synth_1
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Oct 26 17:07:28 2023] Launched synth_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/runme.log
-[Thu Oct 26 17:07:28 2023] Launched impl_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/runme.log
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+Adding component instance block -- xilinx.com:ip:xadc_wiz:3.3 - xadc_wiz_0
+Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
+Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_2
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_0
+Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_1
+Adding component instance block -- xilinx.com:module_ref:Divisor_Freccuencia:1.0 - Divisor_Freccuencia_0
+Adding component instance block -- xilinx.com:module_ref:Decodificador_BCD_7SEG:1.0 - Decodificador_BCD_7S_0
+Adding component instance block -- xilinx.com:module_ref:Cuantificador:1.0 - Cuantificador_0
+Adding component instance block -- xilinx.com:module_ref:BinBCD:1.0 - BinBCD_0
+Adding component instance block -- xilinx.com:module_ref:Multiplexor:1.0 - Multiplexor_0
+WARNING: [BD 41-1731] Type mismatch between connected pins: /Divisor_Freccuencia_0/Clk_Mux(undef) and /Multiplexor_0/Clk(clk)
+Successfully read diagram <design_1> from BD file <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd>
+open_bd_design: Time (s): cpu = 00:00:16 ; elapsed = 00:00:22 . Memory (MB): peak = 866.332 ; gain = 53.637
 open_hw
 connect_hw_server
 INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
@@ -35,13 +45,26 @@ INFO: [Labtools 27-2221] Launch Output:
     ** Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 
 
+connect_hw_server: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 895.566 ; gain = 1.379
 open_hw_target
 INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210370AFD0E9A
-open_hw_target: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 1918.977 ; gain = 1115.289
+open_hw_target: Time (s): cpu = 00:00:07 ; elapsed = 00:00:15 . Memory (MB): peak = 2029.086 ; gain = 1133.520
 set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
 current_hw_device [get_hw_devices xc7z007s_1]
 refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1435] Device xc7z007s (JTAG device index = 1) is not programmed (DONE status = 0).
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
 INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210370AFD0E9A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210370AFD0E9A
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z007s (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
 set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
 set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
@@ -50,230 +73,17 @@ INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
 INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
 open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
-Adding component instance block -- xilinx.com:ip:xadc_wiz:3.3 - xadc_wiz_0
-Adding component instance block -- xilinx.com:ip:clk_wiz:6.0 - clk_wiz_0
-Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_0
-Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_1
-Adding component instance block -- xilinx.com:ip:xlconstant:1.1 - xlconstant_2
-Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_0
-Adding component instance block -- xilinx.com:ip:xlslice:1.0 - xlslice_1
-Adding component instance block -- xilinx.com:module_ref:Divisor_Freccuencia:1.0 - Divisor_Freccuencia_0
-Adding component instance block -- xilinx.com:module_ref:Decodificador_BCD_7SEG:1.0 - Decodificador_BCD_7S_0
-Adding component instance block -- xilinx.com:module_ref:Multiplexor:1.0 - Multiplexor_0
-WARNING: [BD 41-1731] Type mismatch between connected pins: /Divisor_Freccuencia_0/Clk_Mux(undef) and /Multiplexor_0/Clk(clk)
-Successfully read diagram <design_1> from BD file <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd>
-open_bd_design: Time (s): cpu = 00:00:11 ; elapsed = 00:00:13 . Memory (MB): peak = 2050.441 ; gain = 77.332
-open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
-update_module_reference design_1_Decodificador_BCD_7S_0_0
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
-Upgrading 'D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd'
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_Decodificador_BCD_7S_0_0_synth_1
-
-INFO: [IP_Flow 19-3420] Updated design_1_Decodificador_BCD_7S_0_0 to use current project options
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-update_module_reference: Time (s): cpu = 00:00:04 ; elapsed = 00:00:17 . Memory (MB): peak = 2215.297 ; gain = 0.742
-generate_target all [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}]
-WARNING: [BD 41-927] Following properties on pin /xadc_wiz_0/dclk_in have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-WARNING: [BD 41-927] Following properties on pin /Divisor_Freccuencia_0/Clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xadc_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Divisor_Freccuencia_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Decodificador_BCD_7S_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Multiplexor_0 .
-Exporting to file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-Generated Block Design Tcl file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Generated Hardware Definition File D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.hwdef
-create_ip_run [get_files -of_objects [get_fileset sources_1] {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}]
-launch_runs design_1_Decodificador_BCD_7S_0_0_synth_1
-INFO: [Common 17-344] 'launch_runs' was cancelled
-ERROR: [Vivado 12-4146] Open Elaborated Design failed due to the following error:
-ERROR: [Common 17-69] Command failed: 
-
-make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-[Thu Oct 26 17:33:48 2023] Launched design_1_Decodificador_BCD_7S_0_0_synth_1, synth_1...
-Run output will be captured here:
-design_1_Decodificador_BCD_7S_0_0_synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_Decodificador_BCD_7S_0_0_synth_1/runme.log
-synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/runme.log
-[Thu Oct 26 17:33:48 2023] Launched impl_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/runme.log
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-close [ open {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/BinBCD.v} w ]
-add_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/BinBCD.v}}
-update_compile_order -fileset sources_1
-close [ open {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/Cuantificador.v} w ]
-add_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/Cuantificador.v}}
-update_compile_order -fileset sources_1
-create_bd_cell -type module -reference Cuantificador Cuantificador_0
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
-set_property location {2 668 505} [get_bd_cells Cuantificador_0]
-delete_bd_objs [get_bd_nets xlslice_0_Dout]
-create_bd_cell -type module -reference BinBCD BinBCD_0
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
-connect_bd_net [get_bd_pins Cuantificador_0/Binario] [get_bd_pins BinBCD_0/Binario]
-delete_bd_objs [get_bd_nets xlslice_1_Dout]
-startgroup
-set_property -dict [list CONFIG.DIN_FROM {14} CONFIG.DOUT_WIDTH {7}] [get_bd_cells xlslice_0]
-endgroup
-connect_bd_net [get_bd_pins Cuantificador_0/ADC] [get_bd_pins xlslice_0/Dout]
-update_module_reference design_1_Multiplexor_0_0
-INFO: [IP_Flow 19-5107] Inferred bus interface 'Clk' of definition 'xilinx.com:signal:clock:1.0' (from Xilinx Repository).
-WARNING: [IP_Flow 19-3153] Bus Interface 'Clk': ASSOCIATED_BUSIF bus parameter is missing.
-INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
-Upgrading 'D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd'
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_Multiplexor_0_0_synth_1
-
-INFO: [IP_Flow 19-3420] Updated design_1_Multiplexor_0_0 to use current project options
-WARNING: [IP_Flow 19-4706] Upgraded port 'Decenas' width 4 differs from original width 8
-WARNING: [IP_Flow 19-4706] Upgraded port 'Unidades' width 4 differs from original width 8
-WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_Multiplexor_0_0'. These changes may impact your design.
-WARNING: [BD 41-1731] Type mismatch between connected pins: /Divisor_Freccuencia_0/Clk_Mux(undef) and /Multiplexor_0_upgraded_ipi/Clk(clk)
-CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_Multiplexor_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-update_compile_order -fileset sources_1
-connect_bd_net [get_bd_pins BinBCD_0/Unidades] [get_bd_pins Multiplexor_0/Unidades]
-connect_bd_net [get_bd_pins BinBCD_0/Decenas] [get_bd_pins Multiplexor_0/Decenas]
-make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
-WARNING: [BD 41-927] Following properties on pin /xadc_wiz_0/dclk_in have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-WARNING: [BD 41-927] Following properties on pin /Divisor_Freccuencia_0/Clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xadc_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Divisor_Freccuencia_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Decodificador_BCD_7S_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Multiplexor_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Cuantificador_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block BinBCD_0 .
-Exporting to file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-Generated Block Design Tcl file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Generated Hardware Definition File D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.hwdef
-[Thu Oct 26 17:49:33 2023] Launched design_1_Multiplexor_0_0_synth_1, design_1_BinBCD_0_0_synth_1, design_1_Cuantificador_0_0_synth_1, synth_1...
-Run output will be captured here:
-design_1_Multiplexor_0_0_synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_Multiplexor_0_0_synth_1/runme.log
-design_1_BinBCD_0_0_synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_BinBCD_0_0_synth_1/runme.log
-design_1_Cuantificador_0_0_synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_Cuantificador_0_0_synth_1/runme.log
-synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/runme.log
-[Thu Oct 26 17:49:34 2023] Launched impl_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:06 ; elapsed = 00:00:11 . Memory (MB): peak = 2610.496 ; gain = 64.680
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-startgroup
-set_property -dict [list CONFIG.DIN_FROM {6} CONFIG.DOUT_WIDTH {7}] [get_bd_cells xlslice_1]
-endgroup
-delete_bd_objs [get_bd_nets xlslice_0_Dout]
-connect_bd_net [get_bd_pins Cuantificador_0/ADC] [get_bd_pins xlslice_1/Dout]
-make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
-WARNING: [BD 41-927] Following properties on pin /xadc_wiz_0/dclk_in have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-WARNING: [BD 41-927] Following properties on pin /Divisor_Freccuencia_0/Clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xadc_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Divisor_Freccuencia_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Decodificador_BCD_7S_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Multiplexor_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Cuantificador_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block BinBCD_0 .
-Exporting to file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-Generated Block Design Tcl file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Generated Hardware Definition File D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.hwdef
-[Thu Oct 26 17:56:03 2023] Launched synth_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/runme.log
-[Thu Oct 26 17:56:03 2023] Launched impl_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 2683.387 ; gain = 37.957
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
 INFO: [Device 21-403] Loading part xc7z007sclg400-1
 startgroup
-set_property -dict [list CONFIG.DCLK_FREQUENCY {10} CONFIG.ADC_CONVERSION_RATE {193}] [get_bd_cells xadc_wiz_0]
+set_property -dict [list CONFIG.ADC_CONVERSION_RATE {39}] [get_bd_cells xadc_wiz_0]
 endgroup
-save_bd_design
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
 make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
 WARNING: [BD 41-927] Following properties on pin /xadc_wiz_0/dclk_in have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
 	CLK_DOMAIN=/clk_wiz_0_clk_out1 
 WARNING: [BD 41-927] Following properties on pin /Divisor_Freccuencia_0/Clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
 	CLK_DOMAIN=/clk_wiz_0_clk_out1 
 Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
 VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
 VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
 VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
@@ -305,58 +115,13 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block BinBCD_0 .
 Exporting to file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
 Generated Block Design Tcl file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
 Generated Hardware Definition File D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.hwdef
-[Thu Oct 26 18:00:40 2023] Launched design_1_xadc_wiz_0_0_synth_1, synth_1...
+[Fri Oct 27 09:41:56 2023] Launched design_1_xadc_wiz_0_0_synth_1, synth_1...
 Run output will be captured here:
 design_1_xadc_wiz_0_0_synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_xadc_wiz_0_0_synth_1/runme.log
 synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/runme.log
-[Thu Oct 26 18:00:40 2023] Launched impl_1...
+[Fri Oct 27 09:41:57 2023] Launched impl_1...
 Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:03 ; elapsed = 00:00:08 . Memory (MB): peak = 2799.297 ; gain = 51.609
-set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
-set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
-program_hw_devices [get_hw_devices xc7z007s_1]
-INFO: [Labtools 27-3164] End of startup status: HIGH
-refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
-INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
-delete_bd_objs [get_bd_nets xlslice_1_Dout]
-connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins Cuantificador_0/ADC]
-save_bd_design
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-Wrote  : <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 4
-WARNING: [BD 41-927] Following properties on pin /xadc_wiz_0/dclk_in have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-WARNING: [BD 41-927] Following properties on pin /Divisor_Freccuencia_0/Clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
-	CLK_DOMAIN=/clk_wiz_0_clk_out1 
-Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
-VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xadc_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block clk_wiz_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_2 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Divisor_Freccuencia_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Decodificador_BCD_7S_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Multiplexor_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block Cuantificador_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block BinBCD_0 .
-Exporting to file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
-Generated Block Design Tcl file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
-Generated Hardware Definition File D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.hwdef
-[Thu Oct 26 18:05:45 2023] Launched synth_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/runme.log
-[Thu Oct 26 18:05:45 2023] Launched impl_1...
-Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 2823.344 ; gain = 24.047
+launch_runs: Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 2422.742 ; gain = 53.992
 set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
 set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
@@ -365,24 +130,82 @@ INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
 INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
 startgroup
-set_property -dict [list CONFIG.ACQUISITION_TIME {10} CONFIG.DCLK_FREQUENCY {8} CONFIG.ADC_CONVERSION_RATE {154} CONFIG.EXTERNAL_MUX_CHANNEL {VP_VN} CONFIG.SINGLE_CHANNEL_SELECTION {VP_VN} CONFIG.SINGLE_CHANNEL_ACQUISITION_TIME {true}] [get_bd_cells xadc_wiz_0]
+set_property -dict [list CONFIG.DIN_TO {4} CONFIG.DIN_FROM {15} CONFIG.DIN_FROM {15} CONFIG.DOUT_WIDTH {12}] [get_bd_cells xlslice_0]
 endgroup
-save_bd_design
+update_module_reference design_1_Cuantificador_0_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
+Upgrading 'D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd'
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_Cuantificador_0_0_synth_1
+
+INFO: [IP_Flow 19-3420] Updated design_1_Cuantificador_0_0 to use current project options
+WARNING: [IP_Flow 19-4706] Upgraded port 'ADC' width 14 differs from original width 7
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_Cuantificador_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_Cuantificador_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
 Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
-reset_run synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1
-
-reset_run design_1_xadc_wiz_0_0_synth_1
-WARNING: [Vivado 12-1017] Problems encountered:
-1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_xadc_wiz_0_0_synth_1
-
-launch_runs impl_1 -to_step write_bitstream -jobs 4
+Wrote  : <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+update_module_reference: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 2429.641 ; gain = 0.781
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
 WARNING: [BD 41-927] Following properties on pin /xadc_wiz_0/dclk_in have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
 	CLK_DOMAIN=/clk_wiz_0_clk_out1 
 WARNING: [BD 41-927] Following properties on pin /Divisor_Freccuencia_0/Clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
 	CLK_DOMAIN=/clk_wiz_0_clk_out1 
 Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/Cuantificador_0/ADC'(14) to net 'xlslice_0_Dout'(12) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/Cuantificador_0/ADC'(14) to net 'xlslice_0_Dout'(12) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/Cuantificador_0/ADC'(14) to net 'xlslice_0_Dout'(12) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
+CRITICAL WARNING: [BD 41-1228] Width mismatch when connecting input pin '/Cuantificador_0/ADC'(14) to net 'xlslice_0_Dout'(12) - Only lower order bits will be connected, and other input bits of this pin will be left unconnected.
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+update_module_reference design_1_Cuantificador_0_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
+Upgrading 'D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_Cuantificador_0_0 to use current project options
+WARNING: [IP_Flow 19-4706] Upgraded port 'ADC' width 13 differs from original width 14
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_Cuantificador_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_Cuantificador_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
+update_module_reference design_1_Cuantificador_0_0
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new'.
+Upgrading 'D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd'
+INFO: [IP_Flow 19-3420] Updated design_1_Cuantificador_0_0 to use current project options
+WARNING: [IP_Flow 19-4706] Upgraded port 'ADC' width 12 differs from original width 13
+WARNING: [IP_Flow 19-3298] Detected external port differences while upgrading 'design_1_Cuantificador_0_0'. These changes may impact your design.
+CRITICAL WARNING: [Coretcl 2-1280] The upgrade of 'design_1_Cuantificador_0_0' has identified issues that may require user intervention. Please verify that the instance is correctly configured, and review any upgrade messages.
+Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
+delete_bd_objs [get_bd_nets xadc_wiz_0_do_out]
+connect_bd_net [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]
+undo
+INFO: [Common 17-17] undo 'connect_bd_net [get_bd_pins xlslice_0/Din] [get_bd_pins xlslice_1/Din]'
+undo
+INFO: [Common 17-17] undo 'delete_bd_objs [get_bd_nets xadc_wiz_0_do_out]'
+set_property location {1 334 685} [get_bd_cells xlslice_1]
+delete_bd_objs [get_bd_cells xlslice_1]
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+WARNING: [BD 41-927] Following properties on pin /xadc_wiz_0/dclk_in have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_0_clk_out1 
+WARNING: [BD 41-927] Following properties on pin /Divisor_Freccuencia_0/Clk have been updated from connected ip. They may not be synchronized with cell properties. You can set property on pin directly to confirm the value and resolve the warning.
+	CLK_DOMAIN=/clk_wiz_0_clk_out1 
+Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
+Wrote  : <D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ui/bd_1f5defd0.ui> 
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
+VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
+reset_run synth_1
+WARNING: [Vivado 12-1017] Problems encountered:
+1. Failed to delete one or more files in run directory D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1
+
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+INFO: [BD 41-1662] The design 'design_1.bd' is already validated. Therefore parameter propagation will not be re-run.
 VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v
 VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/sim/design_1.v
 VHDL Output written to : D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v
@@ -392,7 +215,6 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_0
 INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_1 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block xlconstant_2 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_0 .
-INFO: [BD 41-1029] Generation completed for the IP Integrator block xlslice_1 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Divisor_Freccuencia_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Decodificador_BCD_7S_0 .
 INFO: [BD 41-1029] Generation completed for the IP Integrator block Multiplexor_0 .
@@ -401,13 +223,13 @@ INFO: [BD 41-1029] Generation completed for the IP Integrator block BinBCD_0 .
 Exporting to file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1.hwh
 Generated Block Design Tcl file D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hw_handoff/design_1_bd.tcl
 Generated Hardware Definition File D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.hwdef
-[Thu Oct 26 18:14:05 2023] Launched design_1_xadc_wiz_0_0_synth_1, synth_1...
+[Fri Oct 27 09:57:20 2023] Launched design_1_Cuantificador_0_0_synth_1, synth_1...
 Run output will be captured here:
-design_1_xadc_wiz_0_0_synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_xadc_wiz_0_0_synth_1/runme.log
+design_1_Cuantificador_0_0_synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/design_1_Cuantificador_0_0_synth_1/runme.log
 synth_1: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/synth_1/runme.log
-[Thu Oct 26 18:14:05 2023] Launched impl_1...
+[Fri Oct 27 09:57:20 2023] Launched impl_1...
 Run output will be captured here: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/runme.log
-launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2875.973 ; gain = 39.055
+launch_runs: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 2569.082 ; gain = 39.215
 set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
 set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
 set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
@@ -415,5 +237,141 @@ program_hw_devices [get_hw_devices xc7z007s_1]
 INFO: [Labtools 27-3164] End of startup status: HIGH
 refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
 INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+startgroup
+set_property -dict [list CONFIG.ACQUISITION_TIME {10} CONFIG.EXTERNAL_MUX_CHANNEL {VP_VN} CONFIG.SINGLE_CHANNEL_SELECTION {VP_VN} CONFIG.SINGLE_CHANNEL_ACQUISITION_TIME {true}] [get_bd_cells xadc_wiz_0]
+endgroup
+save_bd_design
+Wrote  : <D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.srcs\sources_1\bd\design_1\design_1.bd> 
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}]
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7z007sclg400-1
+Top: design_1_wrapper
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:04 . Memory (MB): peak = 2759.445 ; gain = 168.922
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+INFO: [Synth 8-6157] synthesizing module 'design_1' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v:18]
+INFO: [Synth 8-6157] synthesizing module 'design_1_BinBCD_0_0' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_BinBCD_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_BinBCD_0_0' (1#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_BinBCD_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_Cuantificador_0_0' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Cuantificador_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_Cuantificador_0_0' (2#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Cuantificador_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_Decodificador_BCD_7S_0_0' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Decodificador_BCD_7S_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_Decodificador_BCD_7S_0_0' (3#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Decodificador_BCD_7S_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_Divisor_Freccuencia_0_4' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Divisor_Freccuencia_0_4_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_Divisor_Freccuencia_0_4' (4#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Divisor_Freccuencia_0_4_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_Multiplexor_0_0' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Multiplexor_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_Multiplexor_0_0' (5#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_Multiplexor_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (6#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_clk_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xadc_wiz_0_0' [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_xadc_wiz_0_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xadc_wiz_0_0' (7#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/.Xil/Vivado-9036-LAPTOP-S8QAS0D9/realtime/design_1_xadc_wiz_0_0_stub.v:5]
+WARNING: [Synth 8-7023] instance 'xadc_wiz_0' of module 'design_1_xadc_wiz_0_0' has 15 connections declared, but only 9 given [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v:80]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_0_0' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 3 - type: integer 
+	Parameter CONST_WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant' (8#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_0_0' (9#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_0_0/synth/design_1_xlconstant_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_1_0' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/synth/design_1_xlconstant_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 1 - type: integer 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized0' (9#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_1_0' (10#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_1_0/synth/design_1_xlconstant_1_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlconstant_2_0' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_2_0/synth/design_1_xlconstant_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+	Parameter CONST_VAL bound to: 0 - type: integer 
+	Parameter CONST_WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconstant_v1_1_6_xlconstant__parameterized1' (10#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/66e7/hdl/xlconstant_v1_1_vl_rfs.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlconstant_2_0' (11#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlconstant_2_0/synth/design_1_xlconstant_2_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'design_1_xlslice_0_0' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_0/synth/design_1_xlslice_0_0.v:57]
+INFO: [Synth 8-6157] synthesizing module 'xlslice_v1_0_2_xlslice' [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+	Parameter DIN_WIDTH bound to: 16 - type: integer 
+	Parameter DIN_FROM bound to: 15 - type: integer 
+	Parameter DIN_TO bound to: 4 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlslice_v1_0_2_xlslice' (12#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ipshared/f044/hdl/xlslice_v1_0_vl_rfs.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_xlslice_0_0' (13#1) [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xlslice_0_0/synth/design_1_xlslice_0_0.v:57]
+INFO: [Synth 8-6155] done synthesizing module 'design_1' (14#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/synth/design_1.v:18]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (15#1) [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/hdl/design_1_wrapper.v:12]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[3]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[2]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[1]
+WARNING: [Synth 8-3331] design xlslice_v1_0_2_xlslice has unconnected port Din[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:05 . Memory (MB): peak = 2794.223 ; gain = 203.699
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2813.137 ; gain = 222.613
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2813.137 ; gain = 222.613
+---------------------------------------------------------------------------------
+INFO: [Project 1-454] Reading design checkpoint 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_BinBCD_0_0/design_1_BinBCD_0_0.dcp' for cell 'design_1_i/BinBCD_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_Cuantificador_0_0/design_1_Cuantificador_0_0.dcp' for cell 'design_1_i/Cuantificador_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_Decodificador_BCD_7S_0_0/design_1_Decodificador_BCD_7S_0_0.dcp' for cell 'design_1_i/Decodificador_BCD_7S_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_Divisor_Freccuencia_0_4/design_1_Divisor_Freccuencia_0_4.dcp' for cell 'design_1_i/Divisor_Freccuencia_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_Multiplexor_0_0/design_1_Multiplexor_0_0.dcp' for cell 'design_1_i/Multiplexor_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.dcp' for cell 'design_1_i/clk_wiz_0'
+INFO: [Project 1-454] Reading design checkpoint 'd:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.dcp' for cell 'design_1_i/xadc_wiz_0'
+INFO: [Netlist 29-17] Analyzing 29 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2019.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 3 IBUFs to IO ports without IO buffers.
+INFO: [Opt 31-141] Inserted 8 OBUFs to IO ports without IO buffers.
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xdc] for cell 'design_1_i/xadc_wiz_0/inst'
+Finished Parsing XDC File [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0.xdc] for cell 'design_1_i/xadc_wiz_0/inst'
+Parsing XDC File [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_board.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Parsing XDC File [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+Finished Parsing XDC File [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc] for cell 'design_1_i/clk_wiz_0/inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/design_1_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+INFO: [Timing 38-2] Deriving generated clocks
+Parsing XDC File [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/constrs_1/imports/Unidad 2/Cora-Z7-07S-Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'v_p'. [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/constrs_1/imports/Unidad 2/Cora-Z7-07S-Master.xdc:12]
+WARNING: [Vivado 12-584] No ports matched 'v_n'. [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/constrs_1/imports/Unidad 2/Cora-Z7-07S-Master.xdc:13]
+Finished Parsing XDC File [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/constrs_1/imports/Unidad 2/Cora-Z7-07S-Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/constrs_1/imports/Unidad 2/Cora-Z7-07S-Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/design_1_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Timing 38-2] Deriving generated clocks
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2937.031 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:21 ; elapsed = 00:00:14 . Memory (MB): peak = 2987.766 ; gain = 397.242
+52 Infos, 8 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:35 ; elapsed = 00:00:45 . Memory (MB): peak = 2987.766 ; gain = 406.070
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210370AFD0E9A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210370AFD0E9A
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+INFO: [Labtools 27-1435] Device xc7z007s (JTAG device index = 1) is not programmed (DONE status = 0).
+WARNING: [Labtoolstcl 44-129] No matching hw_ila_data was found.
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+INFO: [Labtools 27-1434] Device xc7z007s (JTAG device index = 1) is programmed with a design that has no supported debug core(s) in it.
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210370AFD0E9A
 exit
-INFO: [Common 17-206] Exiting Vivado at Thu Oct 26 18:20:47 2023...
+INFO: [Common 17-206] Exiting Vivado at Fri Oct 27 10:50:24 2023...

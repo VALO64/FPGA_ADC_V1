@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Oct 26 18:16:26 2023
+| Date         : Fri Oct 27 09:59:43 2023
 | Host         : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file design_1_wrapper_control_sets_placed.rpt
 | Design       : design_1_wrapper
@@ -74,8 +74,8 @@ Table of Contents
 |                       Clock Signal                      | Enable Signal |               Set/Reset Signal              | Slice Load Count | Bel Load Count |
 +---------------------------------------------------------+---------------+---------------------------------------------+------------------+----------------+
 |  design_1_i/clk_wiz_0/inst/clk_out2                     |               |                                             |                1 |              1 |
-|  design_1_i/Divisor_Freccuencia_0/inst/Clk_Mux          |               |                                             |                2 |              6 |
-|  design_1_i/Cuantificador_0/inst/Binario_reg[6]_i_2_n_0 |               |                                             |                6 |              7 |
+|  design_1_i/Divisor_Freccuencia_0/inst/Clk_Mux          |               |                                             |                1 |              6 |
+|  design_1_i/Cuantificador_0/inst/Binario_reg[6]_i_2_n_0 |               |                                             |                7 |              7 |
 |  design_1_i/clk_wiz_0/inst/clk_out2                     |               | design_1_i/Divisor_Freccuencia_0/inst/clear |                8 |             32 |
 +---------------------------------------------------------+---------------+---------------------------------------------+------------------+----------------+
 

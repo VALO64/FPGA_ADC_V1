@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date             : Thu Oct 26 18:16:47 2023
+| Date             : Fri Oct 27 10:00:05 2023
 | Host             : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 | Command          : report_power -file design_1_wrapper_power_routed.rpt -pb design_1_wrapper_power_summary_routed.pb -rpx design_1_wrapper_power_routed.rpx
 | Design           : design_1_wrapper
@@ -53,15 +53,15 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.001 |       10 |       --- |             --- |
-| Slice Logic    |    <0.001 |      156 |       --- |             --- |
-|   LUT as Logic |    <0.001 |       58 |     14400 |            0.40 |
+| Slice Logic    |    <0.001 |      179 |       --- |             --- |
+|   LUT as Logic |    <0.001 |       68 |     14400 |            0.47 |
 |   CARRY4       |    <0.001 |       12 |      4400 |            0.27 |
 |   Register     |    <0.001 |       46 |     28800 |            0.16 |
-|   F7/F8 Muxes  |    <0.001 |        6 |     17600 |            0.03 |
+|   F7/F8 Muxes  |    <0.001 |       15 |     17600 |            0.09 |
 |   Others       |     0.000 |       14 |       --- |             --- |
-| Signals        |    <0.001 |      103 |       --- |             --- |
+| Signals        |    <0.001 |      114 |       --- |             --- |
 | MMCM           |     0.108 |        1 |         2 |           50.00 |
-| I/O            |     0.008 |       10 |       100 |           10.00 |
+| I/O            |     0.007 |       10 |       100 |           10.00 |
 | XADC           |     0.002 |        1 |       --- |             --- |
 | Static Power   |     0.094 |          |           |                 |
 | Total          |     0.213 |          |           |                 |
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.006 |       0.003 |      0.004 |
+| Vccint    |       1.000 |     0.007 |       0.003 |      0.004 |
 | Vccaux    |       1.800 |     0.065 |       0.060 |      0.005 |
 | Vcco33    |       3.300 |     0.003 |       0.002 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

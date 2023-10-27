@@ -1,9 +1,9 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Thu Oct 26 17:50:31 2023
+// Date        : Fri Oct 27 09:58:07 2023
 // Host        : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad
+// Command     : write_verilog -force -mode funcsim {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad
 //               2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_Cuantificador_0_0/design_1_Cuantificador_0_0_sim_netlist.v}
 // Design      : design_1_Cuantificador_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
@@ -18,10 +18,10 @@
 module design_1_Cuantificador_0_0
    (ADC,
     Binario);
-  input [6:0]ADC;
+  input [11:0]ADC;
   output [6:0]Binario;
 
-  wire [6:0]ADC;
+  wire [11:0]ADC;
   wire [6:0]Binario;
 
   design_1_Cuantificador_0_0_Cuantificador inst
@@ -34,32 +34,55 @@ module design_1_Cuantificador_0_0_Cuantificador
    (Binario,
     ADC);
   output [6:0]Binario;
-  input [6:0]ADC;
+  input [11:0]ADC;
 
-  wire [6:0]ADC;
+  wire [11:0]ADC;
   wire [6:0]Binario;
   wire \Binario_reg[0]_i_1_n_0 ;
   wire \Binario_reg[0]_i_2_n_0 ;
   wire \Binario_reg[0]_i_3_n_0 ;
+  wire \Binario_reg[0]_i_4_n_0 ;
+  wire \Binario_reg[0]_i_5_n_0 ;
+  wire \Binario_reg[0]_i_6_n_0 ;
+  wire \Binario_reg[0]_i_7_n_0 ;
   wire \Binario_reg[1]_i_1_n_0 ;
   wire \Binario_reg[1]_i_2_n_0 ;
   wire \Binario_reg[1]_i_3_n_0 ;
+  wire \Binario_reg[1]_i_4_n_0 ;
+  wire \Binario_reg[1]_i_5_n_0 ;
+  wire \Binario_reg[1]_i_6_n_0 ;
+  wire \Binario_reg[1]_i_7_n_0 ;
   wire \Binario_reg[2]_i_1_n_0 ;
   wire \Binario_reg[2]_i_2_n_0 ;
   wire \Binario_reg[2]_i_3_n_0 ;
+  wire \Binario_reg[2]_i_4_n_0 ;
+  wire \Binario_reg[2]_i_5_n_0 ;
+  wire \Binario_reg[2]_i_6_n_0 ;
+  wire \Binario_reg[2]_i_7_n_0 ;
   wire \Binario_reg[3]_i_1_n_0 ;
   wire \Binario_reg[3]_i_2_n_0 ;
   wire \Binario_reg[3]_i_3_n_0 ;
+  wire \Binario_reg[3]_i_4_n_0 ;
+  wire \Binario_reg[3]_i_5_n_0 ;
+  wire \Binario_reg[3]_i_6_n_0 ;
+  wire \Binario_reg[3]_i_7_n_0 ;
   wire \Binario_reg[4]_i_1_n_0 ;
   wire \Binario_reg[4]_i_2_n_0 ;
   wire \Binario_reg[4]_i_3_n_0 ;
+  wire \Binario_reg[4]_i_4_n_0 ;
+  wire \Binario_reg[4]_i_5_n_0 ;
+  wire \Binario_reg[4]_i_6_n_0 ;
+  wire \Binario_reg[4]_i_7_n_0 ;
+  wire \Binario_reg[4]_i_8_n_0 ;
   wire \Binario_reg[5]_i_1_n_0 ;
   wire \Binario_reg[5]_i_2_n_0 ;
   wire \Binario_reg[5]_i_3_n_0 ;
+  wire \Binario_reg[5]_i_4_n_0 ;
   wire \Binario_reg[6]_i_1_n_0 ;
   wire \Binario_reg[6]_i_2_n_0 ;
   wire \Binario_reg[6]_i_3_n_0 ;
   wire \Binario_reg[6]_i_4_n_0 ;
+  wire \Binario_reg[6]_i_5_n_0 ;
 
   (* XILINX_LEGACY_PRIM = "LD" *) 
   LDCE #(
@@ -70,31 +93,61 @@ module design_1_Cuantificador_0_0_Cuantificador
         .G(\Binario_reg[6]_i_2_n_0 ),
         .GE(1'b1),
         .Q(Binario[0]));
-  MUXF7 \Binario_reg[0]_i_1 
+  MUXF8 \Binario_reg[0]_i_1 
        (.I0(\Binario_reg[0]_i_2_n_0 ),
         .I1(\Binario_reg[0]_i_3_n_0 ),
         .O(\Binario_reg[0]_i_1_n_0 ),
         .S(ADC[6]));
+  MUXF7 \Binario_reg[0]_i_2 
+       (.I0(\Binario_reg[0]_i_4_n_0 ),
+        .I1(\Binario_reg[0]_i_5_n_0 ),
+        .O(\Binario_reg[0]_i_2_n_0 ),
+        .S(ADC[5]));
+  MUXF7 \Binario_reg[0]_i_3 
+       (.I0(\Binario_reg[0]_i_6_n_0 ),
+        .I1(\Binario_reg[0]_i_7_n_0 ),
+        .O(\Binario_reg[0]_i_3_n_0 ),
+        .S(ADC[5]));
   LUT6 #(
-    .INIT(64'h469DE947D4A86AD4)) 
-    \Binario_reg[0]_i_2 
-       (.I0(ADC[5]),
-        .I1(ADC[4]),
-        .I2(ADC[3]),
-        .I3(ADC[2]),
-        .I4(ADC[0]),
+    .INIT(64'hA79B0000E08E0000)) 
+    \Binario_reg[0]_i_4 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[2]),
+        .I3(ADC[0]),
+        .I4(\Binario_reg[4]_i_8_n_0 ),
         .I5(ADC[1]),
-        .O(\Binario_reg[0]_i_2_n_0 ));
+        .O(\Binario_reg[0]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'hD49D6A46A96AD49D)) 
-    \Binario_reg[0]_i_3 
-       (.I0(ADC[5]),
-        .I1(ADC[4]),
-        .I2(ADC[3]),
+    .INIT(64'h1E870000A1E80000)) 
+    \Binario_reg[0]_i_5 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[0]),
         .I3(ADC[1]),
-        .I4(ADC[0]),
+        .I4(\Binario_reg[4]_i_8_n_0 ),
         .I5(ADC[2]),
-        .O(\Binario_reg[0]_i_3_n_0 ));
+        .O(\Binario_reg[0]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hE81E00007A870000)) 
+    \Binario_reg[0]_i_6 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[0]),
+        .I3(ADC[2]),
+        .I4(\Binario_reg[4]_i_8_n_0 ),
+        .I5(ADC[1]),
+        .O(\Binario_reg[0]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'h8A710000E78A0000)) 
+    \Binario_reg[0]_i_7 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[1]),
+        .I3(ADC[0]),
+        .I4(\Binario_reg[4]_i_8_n_0 ),
+        .I5(ADC[2]),
+        .O(\Binario_reg[0]_i_7_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   LDCE #(
     .INIT(1'b0)) 
@@ -104,31 +157,61 @@ module design_1_Cuantificador_0_0_Cuantificador
         .G(\Binario_reg[6]_i_2_n_0 ),
         .GE(1'b1),
         .Q(Binario[1]));
-  MUXF7 \Binario_reg[1]_i_1 
+  MUXF8 \Binario_reg[1]_i_1 
        (.I0(\Binario_reg[1]_i_2_n_0 ),
         .I1(\Binario_reg[1]_i_3_n_0 ),
         .O(\Binario_reg[1]_i_1_n_0 ),
         .S(ADC[6]));
+  MUXF7 \Binario_reg[1]_i_2 
+       (.I0(\Binario_reg[1]_i_4_n_0 ),
+        .I1(\Binario_reg[1]_i_5_n_0 ),
+        .O(\Binario_reg[1]_i_2_n_0 ),
+        .S(ADC[5]));
+  MUXF7 \Binario_reg[1]_i_3 
+       (.I0(\Binario_reg[1]_i_6_n_0 ),
+        .I1(\Binario_reg[1]_i_7_n_0 ),
+        .O(\Binario_reg[1]_i_3_n_0 ),
+        .S(ADC[5]));
   LUT6 #(
-    .INIT(64'h58B1A58F1A58F0A4)) 
-    \Binario_reg[1]_i_2 
-       (.I0(ADC[5]),
-        .I1(ADC[4]),
-        .I2(ADC[3]),
+    .INIT(64'hFFFFC353FFFF4CC2)) 
+    \Binario_reg[1]_i_4 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[1]),
         .I3(ADC[0]),
-        .I4(ADC[1]),
+        .I4(\Binario_reg[6]_i_4_n_0 ),
         .I5(ADC[2]),
-        .O(\Binario_reg[1]_i_2_n_0 ));
+        .O(\Binario_reg[1]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'hA5F18FA51A8F581A)) 
-    \Binario_reg[1]_i_3 
-       (.I0(ADC[5]),
-        .I1(ADC[4]),
-        .I2(ADC[3]),
-        .I3(ADC[2]),
-        .I4(ADC[0]),
+    .INIT(64'hFFFF2CCBFFFF32CC)) 
+    \Binario_reg[1]_i_5 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[0]),
+        .I3(ADC[1]),
+        .I4(\Binario_reg[6]_i_4_n_0 ),
+        .I5(ADC[2]),
+        .O(\Binario_reg[1]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFF3D33FFFF43C4)) 
+    \Binario_reg[1]_i_6 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[2]),
+        .I3(ADC[0]),
+        .I4(\Binario_reg[6]_i_4_n_0 ),
         .I5(ADC[1]),
-        .O(\Binario_reg[1]_i_3_n_0 ));
+        .O(\Binario_reg[1]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFCB32FFFFCCB3)) 
+    \Binario_reg[1]_i_7 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[0]),
+        .I3(ADC[1]),
+        .I4(\Binario_reg[6]_i_4_n_0 ),
+        .I5(ADC[2]),
+        .O(\Binario_reg[1]_i_7_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   LDCE #(
     .INIT(1'b0)) 
@@ -138,31 +221,61 @@ module design_1_Cuantificador_0_0_Cuantificador
         .G(\Binario_reg[6]_i_2_n_0 ),
         .GE(1'b1),
         .Q(Binario[2]));
-  MUXF7 \Binario_reg[2]_i_1 
+  MUXF8 \Binario_reg[2]_i_1 
        (.I0(\Binario_reg[2]_i_2_n_0 ),
         .I1(\Binario_reg[2]_i_3_n_0 ),
         .O(\Binario_reg[2]_i_1_n_0 ),
         .S(ADC[6]));
+  MUXF7 \Binario_reg[2]_i_2 
+       (.I0(\Binario_reg[2]_i_4_n_0 ),
+        .I1(\Binario_reg[2]_i_5_n_0 ),
+        .O(\Binario_reg[2]_i_2_n_0 ),
+        .S(ADC[5]));
+  MUXF7 \Binario_reg[2]_i_3 
+       (.I0(\Binario_reg[2]_i_6_n_0 ),
+        .I1(\Binario_reg[2]_i_7_n_0 ),
+        .O(\Binario_reg[2]_i_3_n_0 ),
+        .S(ADC[5]));
   LUT6 #(
-    .INIT(64'h63C2DC9CC6CC3C38)) 
-    \Binario_reg[2]_i_2 
-       (.I0(ADC[5]),
-        .I1(ADC[4]),
-        .I2(ADC[3]),
-        .I3(ADC[0]),
-        .I4(ADC[2]),
-        .I5(ADC[1]),
-        .O(\Binario_reg[2]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h32369333CCCD2C6C)) 
-    \Binario_reg[2]_i_3 
-       (.I0(ADC[5]),
-        .I1(ADC[4]),
+    .INIT(64'h9A00E6008A006400)) 
+    \Binario_reg[2]_i_4 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
         .I2(ADC[1]),
-        .I3(ADC[0]),
-        .I4(ADC[3]),
+        .I3(\Binario_reg[4]_i_8_n_0 ),
+        .I4(ADC[2]),
+        .I5(ADC[0]),
+        .O(\Binario_reg[2]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h59AA00009A660000)) 
+    \Binario_reg[2]_i_5 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[0]),
+        .I3(ADC[2]),
+        .I4(\Binario_reg[4]_i_8_n_0 ),
+        .I5(ADC[1]),
+        .O(\Binario_reg[2]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'h52550000AB2A0000)) 
+    \Binario_reg[2]_i_6 
+       (.I0(ADC[4]),
+        .I1(ADC[0]),
+        .I2(ADC[1]),
+        .I3(ADC[3]),
+        .I4(\Binario_reg[4]_i_8_n_0 ),
         .I5(ADC[2]),
-        .O(\Binario_reg[2]_i_3_n_0 ));
+        .O(\Binario_reg[2]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'h6555000099AA0000)) 
+    \Binario_reg[2]_i_7 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[0]),
+        .I3(ADC[1]),
+        .I4(\Binario_reg[4]_i_8_n_0 ),
+        .I5(ADC[2]),
+        .O(\Binario_reg[2]_i_7_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   LDCE #(
     .INIT(1'b0)) 
@@ -172,31 +285,60 @@ module design_1_Cuantificador_0_0_Cuantificador
         .G(\Binario_reg[6]_i_2_n_0 ),
         .GE(1'b1),
         .Q(Binario[3]));
-  MUXF7 \Binario_reg[3]_i_1 
+  MUXF8 \Binario_reg[3]_i_1 
        (.I0(\Binario_reg[3]_i_2_n_0 ),
         .I1(\Binario_reg[3]_i_3_n_0 ),
         .O(\Binario_reg[3]_i_1_n_0 ),
         .S(ADC[6]));
-  LUT6 #(
-    .INIT(64'h4C33CC0CCBCC33CC)) 
-    \Binario_reg[3]_i_2 
-       (.I0(ADC[0]),
-        .I1(ADC[5]),
-        .I2(ADC[1]),
-        .I3(ADC[4]),
-        .I4(ADC[2]),
-        .I5(ADC[3]),
-        .O(\Binario_reg[3]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h559951988AA6AAE6)) 
-    \Binario_reg[3]_i_3 
-       (.I0(ADC[5]),
+  MUXF7 \Binario_reg[3]_i_2 
+       (.I0(\Binario_reg[3]_i_4_n_0 ),
+        .I1(\Binario_reg[3]_i_5_n_0 ),
+        .O(\Binario_reg[3]_i_2_n_0 ),
+        .S(ADC[5]));
+  MUXF7 \Binario_reg[3]_i_3 
+       (.I0(\Binario_reg[3]_i_6_n_0 ),
+        .I1(\Binario_reg[3]_i_7_n_0 ),
+        .O(\Binario_reg[3]_i_3_n_0 ),
+        .S(ADC[5]));
+  LUT5 #(
+    .INIT(32'h30004C00)) 
+    \Binario_reg[3]_i_4 
+       (.I0(ADC[1]),
         .I1(ADC[4]),
-        .I2(ADC[1]),
-        .I3(ADC[2]),
+        .I2(ADC[2]),
+        .I3(\Binario_reg[4]_i_8_n_0 ),
+        .I4(ADC[3]),
+        .O(\Binario_reg[3]_i_4_n_0 ));
+  LUT6 #(
+    .INIT(64'h4CCFF3B300000000)) 
+    \Binario_reg[3]_i_5 
+       (.I0(ADC[0]),
+        .I1(ADC[4]),
+        .I2(ADC[2]),
+        .I3(ADC[1]),
+        .I4(ADC[3]),
+        .I5(\Binario_reg[4]_i_8_n_0 ),
+        .O(\Binario_reg[3]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'hD0D0D04000202020)) 
+    \Binario_reg[3]_i_6 
+       (.I0(ADC[4]),
+        .I1(ADC[2]),
+        .I2(\Binario_reg[4]_i_8_n_0 ),
+        .I3(ADC[1]),
         .I4(ADC[0]),
         .I5(ADC[3]),
-        .O(\Binario_reg[3]_i_3_n_0 ));
+        .O(\Binario_reg[3]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'h000088888CCCCC44)) 
+    \Binario_reg[3]_i_7 
+       (.I0(ADC[4]),
+        .I1(\Binario_reg[4]_i_8_n_0 ),
+        .I2(ADC[0]),
+        .I3(ADC[1]),
+        .I4(ADC[2]),
+        .I5(ADC[3]),
+        .O(\Binario_reg[3]_i_7_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   LDCE #(
     .INIT(1'b0)) 
@@ -206,31 +348,70 @@ module design_1_Cuantificador_0_0_Cuantificador
         .G(\Binario_reg[6]_i_2_n_0 ),
         .GE(1'b1),
         .Q(Binario[4]));
-  MUXF7 \Binario_reg[4]_i_1 
+  MUXF8 \Binario_reg[4]_i_1 
        (.I0(\Binario_reg[4]_i_2_n_0 ),
         .I1(\Binario_reg[4]_i_3_n_0 ),
         .O(\Binario_reg[4]_i_1_n_0 ),
         .S(ADC[6]));
+  MUXF7 \Binario_reg[4]_i_2 
+       (.I0(\Binario_reg[4]_i_4_n_0 ),
+        .I1(\Binario_reg[4]_i_5_n_0 ),
+        .O(\Binario_reg[4]_i_2_n_0 ),
+        .S(ADC[5]));
+  MUXF7 \Binario_reg[4]_i_3 
+       (.I0(\Binario_reg[4]_i_6_n_0 ),
+        .I1(\Binario_reg[4]_i_7_n_0 ),
+        .O(\Binario_reg[4]_i_3_n_0 ),
+        .S(ADC[5]));
+  LUT5 #(
+    .INIT(32'hCC800000)) 
+    \Binario_reg[4]_i_4 
+       (.I0(ADC[1]),
+        .I1(\Binario_reg[4]_i_8_n_0 ),
+        .I2(ADC[2]),
+        .I3(ADC[3]),
+        .I4(ADC[4]),
+        .O(\Binario_reg[4]_i_4_n_0 ));
   LUT6 #(
-    .INIT(64'hB33030300C0C0CCC)) 
-    \Binario_reg[4]_i_2 
+    .INIT(64'h8003333300000000)) 
+    \Binario_reg[4]_i_5 
        (.I0(ADC[0]),
-        .I1(ADC[5]),
-        .I2(ADC[3]),
-        .I3(ADC[2]),
-        .I4(ADC[1]),
-        .I5(ADC[4]),
-        .O(\Binario_reg[4]_i_2_n_0 ));
-  LUT6 #(
-    .INIT(64'h2222ABBBFDDDDDDD)) 
-    \Binario_reg[4]_i_3 
-       (.I0(ADC[5]),
-        .I1(ADC[3]),
-        .I2(ADC[0]),
+        .I1(ADC[4]),
+        .I2(ADC[2]),
         .I3(ADC[1]),
+        .I4(ADC[3]),
+        .I5(\Binario_reg[4]_i_8_n_0 ),
+        .O(\Binario_reg[4]_i_5_n_0 ));
+  LUT6 #(
+    .INIT(64'h0015FFFF00000000)) 
+    \Binario_reg[4]_i_6 
+       (.I0(ADC[2]),
+        .I1(ADC[0]),
+        .I2(ADC[1]),
+        .I3(ADC[3]),
+        .I4(ADC[4]),
+        .I5(\Binario_reg[4]_i_8_n_0 ),
+        .O(\Binario_reg[4]_i_6_n_0 ));
+  LUT6 #(
+    .INIT(64'h7600EE006600EE00)) 
+    \Binario_reg[4]_i_7 
+       (.I0(ADC[4]),
+        .I1(ADC[3]),
+        .I2(ADC[1]),
+        .I3(\Binario_reg[4]_i_8_n_0 ),
         .I4(ADC[2]),
-        .I5(ADC[4]),
-        .O(\Binario_reg[4]_i_3_n_0 ));
+        .I5(ADC[0]),
+        .O(\Binario_reg[4]_i_7_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'h00000001)) 
+    \Binario_reg[4]_i_8 
+       (.I0(ADC[11]),
+        .I1(ADC[8]),
+        .I2(ADC[9]),
+        .I3(ADC[10]),
+        .I4(ADC[7]),
+        .O(\Binario_reg[4]_i_8_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   LDCE #(
     .INIT(1'b0)) 
@@ -240,30 +421,44 @@ module design_1_Cuantificador_0_0_Cuantificador
         .G(\Binario_reg[6]_i_2_n_0 ),
         .GE(1'b1),
         .Q(Binario[5]));
-  MUXF7 \Binario_reg[5]_i_1 
-       (.I0(\Binario_reg[5]_i_2_n_0 ),
-        .I1(\Binario_reg[5]_i_3_n_0 ),
-        .O(\Binario_reg[5]_i_1_n_0 ),
-        .S(ADC[6]));
   LUT5 #(
-    .INIT(32'hFEAA0000)) 
+    .INIT(32'hB8FFB800)) 
+    \Binario_reg[5]_i_1 
+       (.I0(\Binario_reg[5]_i_2_n_0 ),
+        .I1(ADC[5]),
+        .I2(\Binario_reg[5]_i_3_n_0 ),
+        .I3(ADC[6]),
+        .I4(\Binario_reg[5]_i_4_n_0 ),
+        .O(\Binario_reg[5]_i_1_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT4 #(
+    .INIT(16'hFF80)) 
     \Binario_reg[5]_i_2 
-       (.I0(ADC[4]),
-        .I1(ADC[1]),
-        .I2(ADC[2]),
-        .I3(ADC[3]),
-        .I4(ADC[5]),
+       (.I0(ADC[2]),
+        .I1(ADC[3]),
+        .I2(ADC[4]),
+        .I3(\Binario_reg[6]_i_4_n_0 ),
         .O(\Binario_reg[5]_i_2_n_0 ));
   LUT6 #(
-    .INIT(64'h8888011155555555)) 
+    .INIT(64'hCCCCCDDDFFFFFFFF)) 
     \Binario_reg[5]_i_3 
-       (.I0(ADC[5]),
-        .I1(ADC[3]),
+       (.I0(ADC[2]),
+        .I1(\Binario_reg[6]_i_4_n_0 ),
         .I2(ADC[0]),
         .I3(ADC[1]),
-        .I4(ADC[2]),
+        .I4(ADC[3]),
         .I5(ADC[4]),
         .O(\Binario_reg[5]_i_3_n_0 ));
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFA80000)) 
+    \Binario_reg[5]_i_4 
+       (.I0(ADC[3]),
+        .I1(ADC[1]),
+        .I2(ADC[2]),
+        .I3(ADC[4]),
+        .I4(ADC[5]),
+        .I5(\Binario_reg[6]_i_4_n_0 ),
+        .O(\Binario_reg[5]_i_4_n_0 ));
   (* XILINX_LEGACY_PRIM = "LD" *) 
   LDCE #(
     .INIT(1'b0)) 
@@ -273,40 +468,52 @@ module design_1_Cuantificador_0_0_Cuantificador
         .G(\Binario_reg[6]_i_2_n_0 ),
         .GE(1'b1),
         .Q(Binario[6]));
-  LUT5 #(
-    .INIT(32'hFEAA0000)) 
+  LUT4 #(
+    .INIT(16'hEFE0)) 
     \Binario_reg[6]_i_1 
-       (.I0(ADC[5]),
-        .I1(ADC[3]),
-        .I2(\Binario_reg[6]_i_3_n_0 ),
-        .I3(ADC[4]),
-        .I4(ADC[6]),
+       (.I0(\Binario_reg[6]_i_3_n_0 ),
+        .I1(ADC[5]),
+        .I2(ADC[6]),
+        .I3(\Binario_reg[6]_i_4_n_0 ),
         .O(\Binario_reg[6]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFFFFFE)) 
     \Binario_reg[6]_i_2 
        (.I0(ADC[5]),
         .I1(ADC[3]),
-        .I2(\Binario_reg[6]_i_4_n_0 ),
-        .I3(ADC[1]),
+        .I2(\Binario_reg[6]_i_5_n_0 ),
+        .I3(ADC[0]),
         .I4(ADC[4]),
         .I5(ADC[6]),
         .O(\Binario_reg[6]_i_2_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT3 #(
-    .INIT(8'hF8)) 
+  LUT6 #(
+    .INIT(64'hFFFFFFFFFFEA0000)) 
     \Binario_reg[6]_i_3 
-       (.I0(ADC[0]),
-        .I1(ADC[1]),
-        .I2(ADC[2]),
-        .O(\Binario_reg[6]_i_3_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair0" *) 
-  LUT2 #(
-    .INIT(4'hE)) 
-    \Binario_reg[6]_i_4 
        (.I0(ADC[2]),
         .I1(ADC[0]),
+        .I2(ADC[1]),
+        .I3(ADC[3]),
+        .I4(ADC[4]),
+        .I5(\Binario_reg[6]_i_4_n_0 ),
+        .O(\Binario_reg[6]_i_3_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair0" *) 
+  LUT5 #(
+    .INIT(32'hFFFFFFFE)) 
+    \Binario_reg[6]_i_4 
+       (.I0(ADC[11]),
+        .I1(ADC[9]),
+        .I2(ADC[8]),
+        .I3(ADC[10]),
+        .I4(ADC[7]),
         .O(\Binario_reg[6]_i_4_n_0 ));
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  LUT3 #(
+    .INIT(8'hFE)) 
+    \Binario_reg[6]_i_5 
+       (.I0(ADC[2]),
+        .I1(\Binario_reg[6]_i_4_n_0 ),
+        .I2(ADC[1]),
+        .O(\Binario_reg[6]_i_5_n_0 ));
 endmodule
 `ifndef GLBL
 `define GLBL

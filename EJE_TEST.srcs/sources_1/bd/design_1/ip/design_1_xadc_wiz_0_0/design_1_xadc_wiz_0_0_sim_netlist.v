@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Thu Oct 26 18:14:49 2023
+// Date        : Fri Oct 27 09:43:14 2023
 // Host        : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad
 //               2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_xadc_wiz_0_0/design_1_xadc_wiz_0_0_sim_netlist.v}
@@ -71,7 +71,7 @@ module design_1_xadc_wiz_0_0
   XADC #(
     .INIT_40(16'h3103),
     .INIT_41(16'h31AF),
-    .INIT_42(16'h0200),
+    .INIT_42(16'h0800),
     .INIT_43(16'h0000),
     .INIT_44(16'h0000),
     .INIT_45(16'h0000),

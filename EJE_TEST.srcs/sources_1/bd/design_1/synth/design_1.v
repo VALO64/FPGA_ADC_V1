@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Thu Oct 26 18:13:59 2023
+//Date        : Fri Oct 27 09:57:14 2023
 //Host        : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -14,7 +14,7 @@
 8 bits menos significativos
 
 8 bits mas significativos */
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=11,numReposBlks=11,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (Catodo_0,
     clk_in1_0,
@@ -46,7 +46,7 @@ module design_1
   wire [6:0]xlconstant_0_dout;
   wire [0:0]xlconstant_1_dout;
   wire [0:0]xlconstant_2_dout;
-  wire [6:0]xlslice_0_Dout;
+  wire [11:0]xlslice_0_Dout;
 
   assign Catodo_0 = Multiplexor_0_Catodo;
   assign clk_in1_0_1 = clk_in1_0;
@@ -96,6 +96,4 @@ module design_1
   design_1_xlslice_0_0 xlslice_0
        (.Din(xadc_wiz_0_do_out),
         .Dout(xlslice_0_Dout));
-  design_1_xlslice_1_0 xlslice_1
-       (.Din(xadc_wiz_0_do_out));
 endmodule

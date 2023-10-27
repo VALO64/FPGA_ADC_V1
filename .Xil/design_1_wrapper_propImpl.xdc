@@ -4,5 +4,7 @@ current_instance design_1_i/clk_wiz_0/inst
 set_property src_info {type:SCOPED_XDC file:1 line:57 export:INPUT save:INPUT read:READ} [current_design]
 set_input_jitter [get_clocks -of_objects [get_ports clk_in1]] 0.08
 current_instance
-set_property src_info {type:XDC file:2 line:4 export:INPUT save:INPUT read:READ} [current_design]
-set_property -dict { PACKAGE_PIN L15   IOSTANDARD LVCMOS33 } [get_ports { leds[7] }]; #IO_L22N_T3_AD7N_35 Sch=led0_b
+set_property src_info {type:XDC file:2 line:12 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN K9    IOSTANDARD LVCMOS33 } [get_ports { v_p }]; #VP_0 Sch=xadc_v_p
+set_property src_info {type:XDC file:2 line:13 export:INPUT save:INPUT read:READ} [current_design]
+set_property -dict { PACKAGE_PIN L10   IOSTANDARD LVCMOS33 } [get_ports { v_n }]; #VN_0 Sch=xadc_v_n
