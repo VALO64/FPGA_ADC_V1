@@ -1,7 +1,7 @@
 module Multiplexor(
     //Declaaramos y definimos entradas y salidas
-    input [7:0] Unidades,
-    input [7:0] Decenas,
+    input [3:0] Unidades,
+    input [3:0] Decenas,
     input wire Clk,
     //input wire SW,
     //input wire BtnM,

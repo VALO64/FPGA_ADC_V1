@@ -63,8 +63,8 @@ module design_1_Multiplexor_0_0 (
   BCD
 );
 
-input wire [7 : 0] Unidades;
-input wire [7 : 0] Decenas;
+input wire [3 : 0] Unidades;
+input wire [3 : 0] Decenas;
 (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Clk, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *)
 (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 Clk CLK" *)
 input wire Clk;

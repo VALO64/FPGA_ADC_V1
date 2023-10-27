@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-| Date         : Thu Oct 26 16:38:01 2023
+| Date         : Thu Oct 26 18:15:38 2023
 | Host         : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
 | Design       : design_1_wrapper
@@ -162,6 +162,8 @@ Table of Contents
 | design_1_Multiplexor_0_0          |    1 |
 | design_1_Divisor_Freccuencia_0_4  |    1 |
 | design_1_Decodificador_BCD_7S_0_0 |    1 |
+| design_1_Cuantificador_0_0        |    1 |
+| design_1_BinBCD_0_0               |    1 |
 +-----------------------------------+------+
 
 

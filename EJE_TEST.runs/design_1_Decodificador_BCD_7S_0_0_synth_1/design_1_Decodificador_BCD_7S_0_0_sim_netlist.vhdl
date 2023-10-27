@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Thu Oct 26 16:20:45 2023
+-- Date        : Thu Oct 26 17:35:04 2023
 -- Host        : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_Decodificador_BCD_7S_0_0_sim_netlist.vhdl
@@ -43,12 +43,12 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   signal \Salidas[6]_INST_0_i_3_n_0\ : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
   attribute SOFT_HLUTNM of \Salidas[0]_INST_0_i_1\ : label is "soft_lutpair0";
-  attribute SOFT_HLUTNM of \Salidas[1]_INST_0_i_1\ : label is "soft_lutpair1";
+  attribute SOFT_HLUTNM of \Salidas[1]_INST_0_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \Salidas[2]_INST_0_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \Salidas[3]_INST_0_i_1\ : label is "soft_lutpair3";
+  attribute SOFT_HLUTNM of \Salidas[3]_INST_0_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \Salidas[4]_INST_0_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \Salidas[5]_INST_0_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \Salidas[6]_INST_0_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \Salidas[5]_INST_0_i_1\ : label is "soft_lutpair2";
+  attribute SOFT_HLUTNM of \Salidas[6]_INST_0_i_1\ : label is "soft_lutpair3";
   attribute SOFT_HLUTNM of \Salidas[6]_INST_0_i_2\ : label is "soft_lutpair0";
 begin
 \Salidas[0]_INST_0\: unisim.vcomponents.LUT2
@@ -62,12 +62,12 @@ begin
     );
 \Salidas[0]_INST_0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FEFB"
+      INIT => X"EF55"
     )
         port map (
-      I0 => Entradas(1),
-      I1 => Entradas(2),
-      I2 => Entradas(3),
+      I0 => Entradas(3),
+      I1 => Entradas(1),
+      I2 => Entradas(2),
       I3 => Entradas(0),
       O => \Salidas[0]_INST_0_i_1_n_0\
     );
@@ -82,13 +82,13 @@ begin
     );
 \Salidas[1]_INST_0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"EFDF"
+      INIT => X"FDFB"
     )
         port map (
-      I0 => Entradas(0),
-      I1 => Entradas(3),
-      I2 => Entradas(2),
-      I3 => Entradas(1),
+      I0 => Entradas(1),
+      I1 => Entradas(2),
+      I2 => Entradas(3),
+      I3 => Entradas(0),
       O => \Salidas[1]_INST_0_i_1_n_0\
     );
 \Salidas[2]_INST_0\: unisim.vcomponents.LUT2
@@ -102,13 +102,13 @@ begin
     );
 \Salidas[2]_INST_0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"FFFB"
+      INIT => X"DFFF"
     )
         port map (
       I0 => Entradas(0),
-      I1 => Entradas(1),
-      I2 => Entradas(3),
-      I3 => Entradas(2),
+      I1 => Entradas(3),
+      I2 => Entradas(2),
+      I3 => Entradas(1),
       O => \Salidas[2]_INST_0_i_1_n_0\
     );
 \Salidas[3]_INST_0\: unisim.vcomponents.LUT2
@@ -122,13 +122,13 @@ begin
     );
 \Salidas[3]_INST_0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"F6FB"
+      INIT => X"DC9D"
     )
         port map (
-      I0 => Entradas(1),
-      I1 => Entradas(2),
-      I2 => Entradas(3),
-      I3 => Entradas(0),
+      I0 => Entradas(3),
+      I1 => Entradas(0),
+      I2 => Entradas(2),
+      I3 => Entradas(1),
       O => \Salidas[3]_INST_0_i_1_n_0\
     );
 \Salidas[4]_INST_0\: unisim.vcomponents.LUT2
@@ -142,7 +142,7 @@ begin
     );
 \Salidas[4]_INST_0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"0E0F"
+      INIT => X"E0F0"
     )
         port map (
       I0 => Entradas(3),
@@ -162,13 +162,13 @@ begin
     );
 \Salidas[5]_INST_0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"F4FD"
+      INIT => X"8CDD"
     )
         port map (
-      I0 => Entradas(1),
-      I1 => Entradas(2),
-      I2 => Entradas(3),
-      I3 => Entradas(0),
+      I0 => Entradas(3),
+      I1 => Entradas(0),
+      I2 => Entradas(2),
+      I3 => Entradas(1),
       O => \Salidas[5]_INST_0_i_1_n_0\
     );
 \Salidas[6]_INST_0\: unisim.vcomponents.LUT2
@@ -182,13 +182,13 @@ begin
     );
 \Salidas[6]_INST_0_i_1\: unisim.vcomponents.LUT4
     generic map(
-      INIT => X"F6FE"
+      INIT => X"00FB"
     )
         port map (
-      I0 => Entradas(1),
-      I1 => Entradas(2),
-      I2 => Entradas(3),
-      I3 => Entradas(0),
+      I0 => Entradas(0),
+      I1 => Entradas(1),
+      I2 => Entradas(2),
+      I3 => Entradas(3),
       O => \Salidas[6]_INST_0_i_1_n_0\
     );
 \Salidas[6]_INST_0_i_2\: unisim.vcomponents.LUT4

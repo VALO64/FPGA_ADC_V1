@@ -1,9 +1,9 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-// Date        : Thu Oct 26 16:37:03 2023
+// Date        : Thu Oct 26 17:50:29 2023
 // Host        : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {d:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad
+// Command     : write_verilog -force -mode funcsim {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad
 //               2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/ip/design_1_Multiplexor_0_0/design_1_Multiplexor_0_0_sim_netlist.v}
 // Design      : design_1_Multiplexor_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
@@ -21,20 +21,28 @@ module design_1_Multiplexor_0_0
     Clk,
     Catodo,
     BCD);
-  input [7:0]Unidades;
-  input [7:0]Decenas;
+  input [3:0]Unidades;
+  input [3:0]Decenas;
   (* X_INTERFACE_INFO = "xilinx.com:signal:clock:1.0 Clk CLK" *) (* X_INTERFACE_PARAMETER = "XIL_INTERFACENAME Clk, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0" *) input Clk;
   output Catodo;
   output [7:0]BCD;
 
-  wire [7:0]BCD;
+  wire \<const0> ;
+  wire [3:0]\^BCD ;
   wire Catodo;
   wire Clk;
-  wire [7:0]Decenas;
-  wire [7:0]Unidades;
+  wire [3:0]Decenas;
+  wire [3:0]Unidades;
 
+  assign BCD[7] = \<const0> ;
+  assign BCD[6] = \<const0> ;
+  assign BCD[5] = \<const0> ;
+  assign BCD[4] = \<const0> ;
+  assign BCD[3:0] = \^BCD [3:0];
+  GND GND
+       (.G(\<const0> ));
   design_1_Multiplexor_0_0_Multiplexor inst
-       (.BCD(BCD),
+       (.BCD(\^BCD ),
         .Catodo(Catodo),
         .Clk(Clk),
         .Decenas(Decenas),
@@ -49,91 +57,55 @@ module design_1_Multiplexor_0_0_Multiplexor
     Decenas,
     Unidades);
   output Catodo;
-  output [7:0]BCD;
+  output [3:0]BCD;
   input Clk;
-  input [7:0]Decenas;
-  input [7:0]Unidades;
+  input [3:0]Decenas;
+  input [3:0]Unidades;
 
-  wire [7:0]BCD;
+  wire [3:0]BCD;
   wire \BCD[0]_i_1_n_0 ;
   wire \BCD[1]_i_1_n_0 ;
   wire \BCD[2]_i_1_n_0 ;
   wire \BCD[3]_i_1_n_0 ;
-  wire \BCD[4]_i_1_n_0 ;
-  wire \BCD[5]_i_1_n_0 ;
-  wire \BCD[6]_i_1_n_0 ;
-  wire \BCD[7]_i_1_n_0 ;
   wire Catodo;
   wire Clk;
-  wire [7:0]Decenas;
-  wire [7:0]Unidades;
+  wire [3:0]Decenas;
+  wire [3:0]Unidades;
   wire p_0_in;
   wire x;
 
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
-    .INIT(8'hAC)) 
+    .INIT(8'hB8)) 
     \BCD[0]_i_1 
        (.I0(Decenas[0]),
-        .I1(Unidades[0]),
-        .I2(x),
+        .I1(x),
+        .I2(Unidades[0]),
         .O(\BCD[0]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT3 #(
-    .INIT(8'hAC)) 
+    .INIT(8'hB8)) 
     \BCD[1]_i_1 
        (.I0(Decenas[1]),
-        .I1(Unidades[1]),
-        .I2(x),
+        .I1(x),
+        .I2(Unidades[1]),
         .O(\BCD[1]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
-    .INIT(8'hAC)) 
+    .INIT(8'hB8)) 
     \BCD[2]_i_1 
        (.I0(Decenas[2]),
-        .I1(Unidades[2]),
-        .I2(x),
+        .I1(x),
+        .I2(Unidades[2]),
         .O(\BCD[2]_i_1_n_0 ));
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT3 #(
-    .INIT(8'hAC)) 
+    .INIT(8'hB8)) 
     \BCD[3]_i_1 
        (.I0(Decenas[3]),
-        .I1(Unidades[3]),
-        .I2(x),
+        .I1(x),
+        .I2(Unidades[3]),
         .O(\BCD[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
-    \BCD[4]_i_1 
-       (.I0(Decenas[4]),
-        .I1(Unidades[4]),
-        .I2(x),
-        .O(\BCD[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
-    \BCD[5]_i_1 
-       (.I0(Decenas[5]),
-        .I1(Unidades[5]),
-        .I2(x),
-        .O(\BCD[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
-    \BCD[6]_i_1 
-       (.I0(Decenas[6]),
-        .I1(Unidades[6]),
-        .I2(x),
-        .O(\BCD[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
-  LUT3 #(
-    .INIT(8'hAC)) 
-    \BCD[7]_i_1 
-       (.I0(Decenas[7]),
-        .I1(Unidades[7]),
-        .I2(x),
-        .O(\BCD[7]_i_1_n_0 ));
   FDRE #(
     .INIT(1'b0)) 
     \BCD_reg[0] 
@@ -165,38 +137,6 @@ module design_1_Multiplexor_0_0_Multiplexor
         .CE(1'b1),
         .D(\BCD[3]_i_1_n_0 ),
         .Q(BCD[3]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \BCD_reg[4] 
-       (.C(Clk),
-        .CE(1'b1),
-        .D(\BCD[4]_i_1_n_0 ),
-        .Q(BCD[4]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \BCD_reg[5] 
-       (.C(Clk),
-        .CE(1'b1),
-        .D(\BCD[5]_i_1_n_0 ),
-        .Q(BCD[5]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \BCD_reg[6] 
-       (.C(Clk),
-        .CE(1'b1),
-        .D(\BCD[6]_i_1_n_0 ),
-        .Q(BCD[6]),
-        .R(1'b0));
-  FDRE #(
-    .INIT(1'b0)) 
-    \BCD_reg[7] 
-       (.C(Clk),
-        .CE(1'b1),
-        .D(\BCD[7]_i_1_n_0 ),
-        .Q(BCD[7]),
         .R(1'b0));
   FDRE #(
     .INIT(1'b0)) 

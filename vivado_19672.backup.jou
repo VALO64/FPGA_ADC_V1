@@ -1,0 +1,110 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 26 15:40:50 2023
+# Process ID: 19672
+# Current directory: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent12856 D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.xpr
+# Log file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/vivado.log
+# Journal file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.xpr}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets xlslice_1_Dout] [get_bd_nets xlslice_0_Dout] [get_bd_nets Divisor_Freccuencia_0_Clk_Mux] [get_bd_nets Multiplexor_0_Catodo] [get_bd_nets Multiplexor_0_BCD] [get_bd_cells Multiplexor_0]
+delete_bd_objs [get_bd_nets clk_wiz_0_clk_out2] [get_bd_cells Divisor_Freccuencia_0]
+update_compile_order -fileset sources_1
+delete_bd_objs [get_bd_nets Decodificador_BCD_7S_0_Salidas] [get_bd_cells Decodificador_BCD_7S_0]
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:multiplexers_1:1.0 multiplexers_1_0
+endgroup
+set_property location {3 642 599} [get_bd_cells multiplexers_1_0]
+create_bd_cell -type module -reference Divisor_Freccuencia Divisor_Freccuencia_0
+set_property location {1.5 543 783} [get_bd_cells Divisor_Freccuencia_0]
+connect_bd_net [get_bd_pins Divisor_Freccuencia_0/Clk_Mux] [get_bd_pins multiplexers_1_0/S]
+connect_bd_net [get_bd_pins Divisor_Freccuencia_0/Clk] [get_bd_pins clk_wiz_0/clk_out2]
+delete_bd_objs [get_bd_ports Catodo]
+startgroup
+set_property -dict [list CONFIG.DIN_TO {8} CONFIG.DIN_FROM {15} CONFIG.DOUT_WIDTH {8}] [get_bd_cells xlslice_0]
+endgroup
+startgroup
+set_property -dict [list CONFIG.DIN_FROM {7} CONFIG.DOUT_WIDTH {8}] [get_bd_cells xlslice_1]
+endgroup
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins multiplexers_1_0/A]
+connect_bd_net [get_bd_pins xlslice_1/Dout] [get_bd_pins multiplexers_1_0/B]
+create_bd_cell -type module -reference Decodificador_BCD_7SEG Decodificador_BCD_7S_0
+delete_bd_objs [get_bd_cells Decodificador_BCD_7S_0]
+update_module_reference {design_1_Decodificador_BCD_7S_0_0 design_1_Decodificador_BCD_7S_0_1}
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+create_bd_cell -type module -reference Decodificador_BCD_7SEG Decodificador_BCD_7S_0
+delete_bd_objs [get_bd_cells Decodificador_BCD_7S_0]
+update_module_reference {design_1_Decodificador_BCD_7S_0_0 design_1_Decodificador_BCD_7S_0_1 design_1_Decodificador_BCD_7S_0_2}
+save_bd_design
+update_compile_order -fileset sources_1
+close_bd_design [get_bd_designs design_1]
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+create_bd_cell -type module -reference Decodificador_BCD_7SEG Decodificador_BCD_7S_0
+set_property location {4 1115 590} [get_bd_cells Decodificador_BCD_7S_0]
+set_property location {4 1164 596} [get_bd_cells Decodificador_BCD_7S_0]
+connect_bd_net [get_bd_ports leds] [get_bd_pins Decodificador_BCD_7S_0/Salidas]
+connect_bd_net [get_bd_pins Decodificador_BCD_7S_0/Entradas] [get_bd_pins multiplexers_1_0/O]
+save_bd_design
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+current_hw_device [get_hw_devices xc7z007s_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z007s_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets xlslice_0_Dout] [get_bd_nets xlslice_1_Dout] [get_bd_nets Divisor_Freccuencia_0_Clk_Mux] [get_bd_nets multiplexers_1_0_O] [get_bd_cells multiplexers_1_0]
+close_bd_design [get_bd_designs design_1]
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_nets xlslice_0_Dout] [get_bd_nets xlslice_1_Dout] [get_bd_nets Divisor_Freccuencia_0_Clk_Mux] [get_bd_nets multiplexers_1_0_O] [get_bd_cells multiplexers_1_0]
+save_bd_design
+create_bd_cell -type module -reference Multiplexor Multiplexor_0
+set_property location {3 783 593} [get_bd_cells Multiplexor_0]
+connect_bd_net [get_bd_pins Multiplexor_0/BCD] [get_bd_pins Decodificador_BCD_7S_0/Entradas]
+connect_bd_net [get_bd_pins Divisor_Freccuencia_0/Clk_Mux] [get_bd_pins Multiplexor_0/Clk]
+connect_bd_net [get_bd_pins Multiplexor_0/Unidades] [get_bd_pins xlslice_0/Dout]
+connect_bd_net [get_bd_pins xlslice_1/Dout] [get_bd_pins Multiplexor_0/Decenas]
+save_bd_design
+update_compile_order -fileset sources_1
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+make_bd_pins_external  [get_bd_pins Multiplexor_0/Catodo]
+endgroup
+save_bd_design
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]

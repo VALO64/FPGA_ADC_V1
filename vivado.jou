@@ -1,0 +1,124 @@
+#-----------------------------------------------------------
+# Vivado v2019.1 (64-bit)
+# SW Build 2552052 on Fri May 24 14:49:42 MDT 2019
+# IP Build 2548770 on Fri May 24 18:01:18 MDT 2019
+# Start of session at: Thu Oct 26 17:05:35 2023
+# Process ID: 25304
+# Current directory: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4280 D:\Oscar\TEC\Octavo_Semestre\FPGA\Unidad 2\EJE_TEST\EJE_TEST.xpr
+# Log file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/vivado.log
+# Journal file: D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.xpr}
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+current_hw_device [get_hw_devices xc7z007s_1]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7z007s_1] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+open_bd_design {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}
+update_module_reference design_1_Decodificador_BCD_7S_0_0
+generate_target all [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}]
+create_ip_run [get_files -of_objects [get_fileset sources_1] {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}]
+launch_runs design_1_Decodificador_BCD_7S_0_0_synth_1
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+close [ open {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/BinBCD.v} w ]
+add_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/BinBCD.v}}
+update_compile_order -fileset sources_1
+close [ open {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/Cuantificador.v} w ]
+add_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/new/Cuantificador.v}}
+update_compile_order -fileset sources_1
+create_bd_cell -type module -reference Cuantificador Cuantificador_0
+set_property location {2 668 505} [get_bd_cells Cuantificador_0]
+delete_bd_objs [get_bd_nets xlslice_0_Dout]
+create_bd_cell -type module -reference BinBCD BinBCD_0
+connect_bd_net [get_bd_pins Cuantificador_0/Binario] [get_bd_pins BinBCD_0/Binario]
+delete_bd_objs [get_bd_nets xlslice_1_Dout]
+startgroup
+set_property -dict [list CONFIG.DIN_FROM {14} CONFIG.DOUT_WIDTH {7}] [get_bd_cells xlslice_0]
+endgroup
+connect_bd_net [get_bd_pins Cuantificador_0/ADC] [get_bd_pins xlslice_0/Dout]
+update_module_reference design_1_Multiplexor_0_0
+update_compile_order -fileset sources_1
+connect_bd_net [get_bd_pins BinBCD_0/Unidades] [get_bd_pins Multiplexor_0/Unidades]
+connect_bd_net [get_bd_pins BinBCD_0/Decenas] [get_bd_pins Multiplexor_0/Decenas]
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+startgroup
+set_property -dict [list CONFIG.DIN_FROM {6} CONFIG.DOUT_WIDTH {7}] [get_bd_cells xlslice_1]
+endgroup
+delete_bd_objs [get_bd_nets xlslice_0_Dout]
+connect_bd_net [get_bd_pins Cuantificador_0/ADC] [get_bd_pins xlslice_1/Dout]
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+startgroup
+set_property -dict [list CONFIG.DCLK_FREQUENCY {10} CONFIG.ADC_CONVERSION_RATE {193}] [get_bd_cells xadc_wiz_0]
+endgroup
+save_bd_design
+make_wrapper -files [get_files {{D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.srcs/sources_1/bd/design_1/design_1.bd}}] -top
+reset_run synth_1
+reset_run design_1_xadc_wiz_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+delete_bd_objs [get_bd_nets xlslice_1_Dout]
+connect_bd_net [get_bd_pins xlslice_0/Dout] [get_bd_pins Cuantificador_0/ADC]
+save_bd_design
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]
+startgroup
+set_property -dict [list CONFIG.ACQUISITION_TIME {10} CONFIG.DCLK_FREQUENCY {8} CONFIG.ADC_CONVERSION_RATE {154} CONFIG.EXTERNAL_MUX_CHANNEL {VP_VN} CONFIG.SINGLE_CHANNEL_SELECTION {VP_VN} CONFIG.SINGLE_CHANNEL_ACQUISITION_TIME {true}] [get_bd_cells xadc_wiz_0]
+endgroup
+save_bd_design
+reset_run synth_1
+reset_run design_1_xadc_wiz_0_0_synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7z007s_1]
+set_property PROGRAM.FILE {D:/Oscar/TEC/Octavo_Semestre/FPGA/Unidad 2/EJE_TEST/EJE_TEST.runs/impl_1/design_1_wrapper.bit} [get_hw_devices xc7z007s_1]
+program_hw_devices [get_hw_devices xc7z007s_1]
+refresh_hw_device [lindex [get_hw_devices xc7z007s_1] 0]

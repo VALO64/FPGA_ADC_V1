@@ -1,7 +1,7 @@
 //Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
-//Date        : Thu Oct 26 16:36:02 2023
+//Date        : Thu Oct 26 18:13:59 2023
 //Host        : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -14,7 +14,7 @@
 8 bits menos significativos
 
 8 bits mas significativos */
-(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=10,numReposBlks=10,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=3,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
+(* CORE_GENERATION_INFO = "design_1,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=design_1,x_ipVersion=1.00.a,x_ipLanguage=VERILOG,numBlks=12,numReposBlks=12,numNonXlnxBlks=0,numHierBlks=0,maxHierDepth=0,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=5,numPkgbdBlks=0,bdsource=USER,synth_mode=OOC_per_IP}" *) (* HW_HANDOFF = "design_1.hwdef" *) 
 module design_1
    (Catodo_0,
     clk_in1_0,
@@ -29,6 +29,9 @@ module design_1
   input vn_in_0;
   input vp_in_0;
 
+  wire [3:0]BinBCD_0_Decenas;
+  wire [3:0]BinBCD_0_Unidades;
+  wire [6:0]Cuantificador_0_Binario;
   wire [6:0]Decodificador_BCD_7S_0_Salidas;
   wire Divisor_Freccuencia_0_Clk_Mux;
   wire [7:0]Multiplexor_0_BCD;
@@ -43,8 +46,7 @@ module design_1
   wire [6:0]xlconstant_0_dout;
   wire [0:0]xlconstant_1_dout;
   wire [0:0]xlconstant_2_dout;
-  wire [7:0]xlslice_0_Dout;
-  wire [7:0]xlslice_1_Dout;
+  wire [6:0]xlslice_0_Dout;
 
   assign Catodo_0 = Multiplexor_0_Catodo;
   assign clk_in1_0_1 = clk_in1_0;
@@ -52,6 +54,13 @@ module design_1
   assign reset_1 = reset;
   assign vn_in_0_1 = vn_in_0;
   assign vp_in_0_1 = vp_in_0;
+  design_1_BinBCD_0_0 BinBCD_0
+       (.Binario(Cuantificador_0_Binario),
+        .Decenas(BinBCD_0_Decenas),
+        .Unidades(BinBCD_0_Unidades));
+  design_1_Cuantificador_0_0 Cuantificador_0
+       (.ADC(xlslice_0_Dout),
+        .Binario(Cuantificador_0_Binario));
   design_1_Decodificador_BCD_7S_0_0 Decodificador_BCD_7S_0
        (.Entradas(Multiplexor_0_BCD),
         .Salidas(Decodificador_BCD_7S_0_Salidas));
@@ -62,8 +71,8 @@ module design_1
        (.BCD(Multiplexor_0_BCD),
         .Catodo(Multiplexor_0_Catodo),
         .Clk(Divisor_Freccuencia_0_Clk_Mux),
-        .Decenas(xlslice_1_Dout),
-        .Unidades(xlslice_0_Dout));
+        .Decenas(BinBCD_0_Decenas),
+        .Unidades(BinBCD_0_Unidades));
   design_1_clk_wiz_0_0 clk_wiz_0
        (.clk_in1(clk_in1_0_1),
         .clk_out1(clk_wiz_0_clk_out1),
@@ -88,6 +97,5 @@ module design_1
        (.Din(xadc_wiz_0_do_out),
         .Dout(xlslice_0_Dout));
   design_1_xlslice_1_0 xlslice_1
-       (.Din(xadc_wiz_0_do_out),
-        .Dout(xlslice_1_Dout));
+       (.Din(xadc_wiz_0_do_out));
 endmodule

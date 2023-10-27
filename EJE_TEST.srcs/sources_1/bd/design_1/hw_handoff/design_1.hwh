@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Oct 26 16:36:03 2023" VIVADOVERSION="2019.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Oct 26 18:14:00 2023" VIVADOVERSION="2019.1">
 
   <SYSTEMINFO ARCH="zynq" BOARD="digilentinc.com:cora-z7-07s:part0:1.0" DEVICE="7z007s" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
@@ -39,6 +39,51 @@
   <EXTERNALINTERFACES/>
 
   <MODULES>
+    <MODULE COREREVISION="1" FULLNAME="/BinBCD_0" HWVERSION="1.0" INSTANCE="BinBCD_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="BinBCD" VLNV="xilinx.com:module_ref:BinBCD:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_BinBCD_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="6" NAME="Binario" RIGHT="0" SIGIS="undef" SIGNAME="Cuantificador_0_Binario">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Cuantificador_0" PORT="Binario"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="Unidades" RIGHT="0" SIGIS="undef" SIGNAME="BinBCD_0_Unidades">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multiplexor_0" PORT="Unidades"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="3" NAME="Decenas" RIGHT="0" SIGIS="undef" SIGNAME="BinBCD_0_Decenas">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="Multiplexor_0" PORT="Decenas"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
+    <MODULE COREREVISION="1" FULLNAME="/Cuantificador_0" HWVERSION="1.0" INSTANCE="Cuantificador_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Cuantificador" VLNV="xilinx.com:module_ref:Cuantificador:1.0">
+      <DOCUMENTS/>
+      <PARAMETERS>
+        <PARAMETER NAME="Component_Name" VALUE="design_1_Cuantificador_0_0"/>
+        <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
+      </PARAMETERS>
+      <PORTS>
+        <PORT DIR="I" LEFT="6" NAME="ADC" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="Binario" RIGHT="0" SIGIS="undef" SIGNAME="Cuantificador_0_Binario">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="BinBCD_0" PORT="Binario"/>
+          </CONNECTIONS>
+        </PORT>
+      </PORTS>
+      <BUSINTERFACES/>
+    </MODULE>
     <MODULE COREREVISION="1" FULLNAME="/Decodificador_BCD_7S_0" HWVERSION="1.0" INSTANCE="Decodificador_BCD_7S_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="Decodificador_BCD_7SEG" VLNV="xilinx.com:module_ref:Decodificador_BCD_7SEG:1.0">
       <DOCUMENTS/>
       <PARAMETERS>
@@ -87,14 +132,14 @@
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="7" NAME="Unidades" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="I" LEFT="3" NAME="Unidades" RIGHT="0" SIGIS="undef" SIGNAME="BinBCD_0_Unidades">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_0" PORT="Dout"/>
+            <CONNECTION INSTANCE="BinBCD_0" PORT="Unidades"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="7" NAME="Decenas" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
+        <PORT DIR="I" LEFT="3" NAME="Decenas" RIGHT="0" SIGIS="undef" SIGNAME="BinBCD_0_Decenas">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="xlslice_1" PORT="Dout"/>
+            <CONNECTION INSTANCE="BinBCD_0" PORT="Decenas"/>
           </CONNECTIONS>
         </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="Clk" SIGIS="clk" SIGNAME="Divisor_Freccuencia_0_Clk_Mux">
@@ -729,8 +774,8 @@
         <PARAMETER NAME="C_HAS_EXTERNAL_MUX" VALUE="0"/>
         <PARAMETER NAME="C_EXTERNAL_MUX_CHANNEL" VALUE="VP_VN"/>
         <PARAMETER NAME="C_EXTERNAL_MUXADDR_ENABLE" VALUE="0"/>
-        <PARAMETER NAME="C_DCLK_FREQUENCY" VALUE="104"/>
-        <PARAMETER NAME="C_SAMPLING_RATE" VALUE="1000000.0"/>
+        <PARAMETER NAME="C_DCLK_FREQUENCY" VALUE="8"/>
+        <PARAMETER NAME="C_SAMPLING_RATE" VALUE="153846.15384615384"/>
         <PARAMETER NAME="C_HAS_OT_ALARM" VALUE="0"/>
         <PARAMETER NAME="C_HAS_USER_TEMP_ALARM" VALUE="0"/>
         <PARAMETER NAME="C_HAS_VCCINT_ALARM" VALUE="0"/>
@@ -739,9 +784,9 @@
         <PARAMETER NAME="C_HAS_VCCPINT_ALARM" VALUE="0"/>
         <PARAMETER NAME="C_HAS_VCCPAUX_ALARM" VALUE="0"/>
         <PARAMETER NAME="C_HAS_VCCDDRO_ALARM" VALUE="0"/>
-        <PARAMETER NAME="C_CONFIGURATION_R0" VALUE="12291"/>
+        <PARAMETER NAME="C_CONFIGURATION_R0" VALUE="12547"/>
         <PARAMETER NAME="C_CONFIGURATION_R1" VALUE="12719"/>
-        <PARAMETER NAME="C_CONFIGURATION_R2" VALUE="1024"/>
+        <PARAMETER NAME="C_CONFIGURATION_R2" VALUE="512"/>
         <PARAMETER NAME="C_ALARM_LIMIT_R0" VALUE="46573"/>
         <PARAMETER NAME="C_ALARM_LIMIT_R1" VALUE="22500"/>
         <PARAMETER NAME="C_ALARM_LIMIT_R2" VALUE="41287"/>
@@ -800,8 +845,8 @@
         <PARAMETER NAME="XADC_STARUP_SELECTION" VALUE="single_channel"/>
         <PARAMETER NAME="ENABLE_DCLK" VALUE="true"/>
         <PARAMETER NAME="INCREASE_ACQUISITION_TIME" VALUE="false"/>
-        <PARAMETER NAME="DCLK_FREQUENCY" VALUE="104"/>
-        <PARAMETER NAME="ADC_CONVERSION_RATE" VALUE="1000"/>
+        <PARAMETER NAME="DCLK_FREQUENCY" VALUE="8"/>
+        <PARAMETER NAME="ADC_CONVERSION_RATE" VALUE="154"/>
         <PARAMETER NAME="SEQUENCER_MODE" VALUE="Off"/>
         <PARAMETER NAME="ENABLE_CALIBRATION_AVERAGING" VALUE="true"/>
         <PARAMETER NAME="ENABLE_DRP" VALUE="true"/>
@@ -843,7 +888,7 @@
         <PARAMETER NAME="SINGLE_CHANNEL_SELECTION" VALUE="VP_VN"/>
         <PARAMETER NAME="SINGLE_CHANNEL_ENABLE_CALIBRATION" VALUE="true"/>
         <PARAMETER NAME="BIPOLAR_OPERATION" VALUE="false"/>
-        <PARAMETER NAME="SINGLE_CHANNEL_ACQUISITION_TIME" VALUE="false"/>
+        <PARAMETER NAME="SINGLE_CHANNEL_ACQUISITION_TIME" VALUE="true"/>
         <PARAMETER NAME="CHANNEL_AVERAGING" VALUE="256"/>
         <PARAMETER NAME="ADC_OFFSET_CALIBRATION" VALUE="false"/>
         <PARAMETER NAME="ADC_OFFSET_AND_GAIN_CALIBRATION" VALUE="true"/>
@@ -940,7 +985,7 @@
         <PARAMETER NAME="ADDR_WIDTH" VALUE="32"/>
         <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="ENABLE_JTAG_ARBITER" VALUE="false"/>
-        <PARAMETER NAME="ACQUISITION_TIME" VALUE="4"/>
+        <PARAMETER NAME="ACQUISITION_TIME" VALUE="10"/>
         <PARAMETER NAME="ENABLE_TEMP_BUS" VALUE="false"/>
         <PARAMETER NAME="ENABLE_AXI4STREAM" VALUE="false"/>
         <PARAMETER NAME="FIFO_DEPTH" VALUE="7"/>
@@ -1072,10 +1117,10 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="15"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="14"/>
         <PARAMETER NAME="DIN_TO" VALUE="8"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_0_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="7"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1084,9 +1129,9 @@
             <CONNECTION INSTANCE="xadc_wiz_0" PORT="do_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
+        <PORT DIR="O" LEFT="6" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_0_Dout">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="Multiplexor_0" PORT="Unidades"/>
+            <CONNECTION INSTANCE="Cuantificador_0" PORT="ADC"/>
           </CONNECTIONS>
         </PORT>
       </PORTS>
@@ -1096,10 +1141,10 @@
       <DOCUMENTS/>
       <PARAMETERS>
         <PARAMETER NAME="DIN_WIDTH" VALUE="16"/>
-        <PARAMETER NAME="DIN_FROM" VALUE="7"/>
+        <PARAMETER NAME="DIN_FROM" VALUE="6"/>
         <PARAMETER NAME="DIN_TO" VALUE="0"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_xlslice_1_0"/>
-        <PARAMETER NAME="DOUT_WIDTH" VALUE="8"/>
+        <PARAMETER NAME="DOUT_WIDTH" VALUE="7"/>
         <PARAMETER NAME="EDK_IPTYPE" VALUE="PERIPHERAL"/>
       </PARAMETERS>
       <PORTS>
@@ -1108,11 +1153,7 @@
             <CONNECTION INSTANCE="xadc_wiz_0" PORT="do_out"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" LEFT="7" NAME="Dout" RIGHT="0" SIGIS="undef" SIGNAME="xlslice_1_Dout">
-          <CONNECTIONS>
-            <CONNECTION INSTANCE="Multiplexor_0" PORT="Decenas"/>
-          </CONNECTIONS>
-        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="Dout" RIGHT="0" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES/>
     </MODULE>

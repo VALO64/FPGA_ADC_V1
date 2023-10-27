@@ -1,7 +1,7 @@
 -- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2019.1 (win64) Build 2552052 Fri May 24 14:49:42 MDT 2019
--- Date        : Thu Oct 26 16:37:02 2023
+-- Date        : Thu Oct 26 17:50:29 2023
 -- Host        : LAPTOP-S8QAS0D9 running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode funcsim -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ design_1_Multiplexor_0_0_sim_netlist.vhdl
@@ -17,10 +17,10 @@ use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Multiplexor is
   port (
     Catodo : out STD_LOGIC;
-    BCD : out STD_LOGIC_VECTOR ( 7 downto 0 );
+    BCD : out STD_LOGIC_VECTOR ( 3 downto 0 );
     Clk : in STD_LOGIC;
-    Decenas : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    Unidades : in STD_LOGIC_VECTOR ( 7 downto 0 )
+    Decenas : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Unidades : in STD_LOGIC_VECTOR ( 3 downto 0 )
   );
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Multiplexor;
 
@@ -29,10 +29,6 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Multiplexor 
   signal \BCD[1]_i_1_n_0\ : STD_LOGIC;
   signal \BCD[2]_i_1_n_0\ : STD_LOGIC;
   signal \BCD[3]_i_1_n_0\ : STD_LOGIC;
-  signal \BCD[4]_i_1_n_0\ : STD_LOGIC;
-  signal \BCD[5]_i_1_n_0\ : STD_LOGIC;
-  signal \BCD[6]_i_1_n_0\ : STD_LOGIC;
-  signal \BCD[7]_i_1_n_0\ : STD_LOGIC;
   signal p_0_in : STD_LOGIC;
   signal x : STD_LOGIC;
   attribute SOFT_HLUTNM : string;
@@ -40,90 +36,46 @@ architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Multiplexor 
   attribute SOFT_HLUTNM of \BCD[1]_i_1\ : label is "soft_lutpair0";
   attribute SOFT_HLUTNM of \BCD[2]_i_1\ : label is "soft_lutpair1";
   attribute SOFT_HLUTNM of \BCD[3]_i_1\ : label is "soft_lutpair1";
-  attribute SOFT_HLUTNM of \BCD[4]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \BCD[5]_i_1\ : label is "soft_lutpair2";
-  attribute SOFT_HLUTNM of \BCD[6]_i_1\ : label is "soft_lutpair3";
-  attribute SOFT_HLUTNM of \BCD[7]_i_1\ : label is "soft_lutpair3";
 begin
 \BCD[0]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"AC"
+      INIT => X"B8"
     )
         port map (
       I0 => Decenas(0),
-      I1 => Unidades(0),
-      I2 => x,
+      I1 => x,
+      I2 => Unidades(0),
       O => \BCD[0]_i_1_n_0\
     );
 \BCD[1]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"AC"
+      INIT => X"B8"
     )
         port map (
       I0 => Decenas(1),
-      I1 => Unidades(1),
-      I2 => x,
+      I1 => x,
+      I2 => Unidades(1),
       O => \BCD[1]_i_1_n_0\
     );
 \BCD[2]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"AC"
+      INIT => X"B8"
     )
         port map (
       I0 => Decenas(2),
-      I1 => Unidades(2),
-      I2 => x,
+      I1 => x,
+      I2 => Unidades(2),
       O => \BCD[2]_i_1_n_0\
     );
 \BCD[3]_i_1\: unisim.vcomponents.LUT3
     generic map(
-      INIT => X"AC"
+      INIT => X"B8"
     )
         port map (
       I0 => Decenas(3),
-      I1 => Unidades(3),
-      I2 => x,
+      I1 => x,
+      I2 => Unidades(3),
       O => \BCD[3]_i_1_n_0\
-    );
-\BCD[4]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"AC"
-    )
-        port map (
-      I0 => Decenas(4),
-      I1 => Unidades(4),
-      I2 => x,
-      O => \BCD[4]_i_1_n_0\
-    );
-\BCD[5]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"AC"
-    )
-        port map (
-      I0 => Decenas(5),
-      I1 => Unidades(5),
-      I2 => x,
-      O => \BCD[5]_i_1_n_0\
-    );
-\BCD[6]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"AC"
-    )
-        port map (
-      I0 => Decenas(6),
-      I1 => Unidades(6),
-      I2 => x,
-      O => \BCD[6]_i_1_n_0\
-    );
-\BCD[7]_i_1\: unisim.vcomponents.LUT3
-    generic map(
-      INIT => X"AC"
-    )
-        port map (
-      I0 => Decenas(7),
-      I1 => Unidades(7),
-      I2 => x,
-      O => \BCD[7]_i_1_n_0\
     );
 \BCD_reg[0]\: unisim.vcomponents.FDRE
     generic map(
@@ -169,50 +121,6 @@ begin
       Q => BCD(3),
       R => '0'
     );
-\BCD_reg[4]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => Clk,
-      CE => '1',
-      D => \BCD[4]_i_1_n_0\,
-      Q => BCD(4),
-      R => '0'
-    );
-\BCD_reg[5]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => Clk,
-      CE => '1',
-      D => \BCD[5]_i_1_n_0\,
-      Q => BCD(5),
-      R => '0'
-    );
-\BCD_reg[6]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => Clk,
-      CE => '1',
-      D => \BCD[6]_i_1_n_0\,
-      Q => BCD(6),
-      R => '0'
-    );
-\BCD_reg[7]\: unisim.vcomponents.FDRE
-    generic map(
-      INIT => '0'
-    )
-        port map (
-      C => Clk,
-      CE => '1',
-      D => \BCD[7]_i_1_n_0\,
-      Q => BCD(7),
-      R => '0'
-    );
 Catodo_reg: unisim.vcomponents.FDRE
     generic map(
       INIT => '0'
@@ -250,8 +158,8 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
   port (
-    Unidades : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    Decenas : in STD_LOGIC_VECTOR ( 7 downto 0 );
+    Unidades : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    Decenas : in STD_LOGIC_VECTOR ( 3 downto 0 );
     Clk : in STD_LOGIC;
     Catodo : out STD_LOGIC;
     BCD : out STD_LOGIC_VECTOR ( 7 downto 0 )
@@ -269,17 +177,28 @@ entity decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
 end decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix;
 
 architecture STRUCTURE of decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix is
+  signal \<const0>\ : STD_LOGIC;
+  signal \^bcd\ : STD_LOGIC_VECTOR ( 3 downto 0 );
   attribute X_INTERFACE_INFO : string;
   attribute X_INTERFACE_INFO of Clk : signal is "xilinx.com:signal:clock:1.0 Clk CLK";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of Clk : signal is "XIL_INTERFACENAME Clk, FREQ_HZ 100000000, PHASE 0.000, INSERT_VIP 0";
 begin
+  BCD(7) <= \<const0>\;
+  BCD(6) <= \<const0>\;
+  BCD(5) <= \<const0>\;
+  BCD(4) <= \<const0>\;
+  BCD(3 downto 0) <= \^bcd\(3 downto 0);
+GND: unisim.vcomponents.GND
+     port map (
+      G => \<const0>\
+    );
 inst: entity work.decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_Multiplexor
      port map (
-      BCD(7 downto 0) => BCD(7 downto 0),
+      BCD(3 downto 0) => \^bcd\(3 downto 0),
       Catodo => Catodo,
       Clk => Clk,
-      Decenas(7 downto 0) => Decenas(7 downto 0),
-      Unidades(7 downto 0) => Unidades(7 downto 0)
+      Decenas(3 downto 0) => Decenas(3 downto 0),
+      Unidades(3 downto 0) => Unidades(3 downto 0)
     );
 end STRUCTURE;

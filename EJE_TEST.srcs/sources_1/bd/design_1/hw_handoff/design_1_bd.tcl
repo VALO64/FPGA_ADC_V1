@@ -40,7 +40,7 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # The design that will be created by this Tcl script contains the following 
 # module references:
-# Decodificador_BCD_7SEG, Divisor_Freccuencia, Multiplexor
+# BinBCD, Cuantificador, Decodificador_BCD_7SEG, Divisor_Freccuencia, Multiplexor
 
 # Please add the sources of those modules before sourcing this Tcl script.
 
@@ -182,6 +182,28 @@ proc create_root_design { parentCell } {
   set vn_in_0 [ create_bd_port -dir I vn_in_0 ]
   set vp_in_0 [ create_bd_port -dir I vp_in_0 ]
 
+  # Create instance: BinBCD_0, and set properties
+  set block_name BinBCD
+  set block_cell_name BinBCD_0
+  if { [catch {set BinBCD_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $BinBCD_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
+  # Create instance: Cuantificador_0, and set properties
+  set block_name Cuantificador
+  set block_cell_name Cuantificador_0
+  if { [catch {set Cuantificador_0 [create_bd_cell -type module -reference $block_name $block_cell_name] } errmsg] } {
+     catch {common::send_msg_id "BD_TCL-105" "ERROR" "Unable to add referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   } elseif { $Cuantificador_0 eq "" } {
+     catch {common::send_msg_id "BD_TCL-106" "ERROR" "Unable to referenced block <$block_name>. Please add the files for ${block_name}'s definition into the project."}
+     return 1
+   }
+  
   # Create instance: Decodificador_BCD_7S_0, and set properties
   set block_name Decodificador_BCD_7SEG
   set block_cell_name Decodificador_BCD_7S_0
@@ -243,15 +265,18 @@ proc create_root_design { parentCell } {
   # Create instance: xadc_wiz_0, and set properties
   set xadc_wiz_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xadc_wiz:3.3 xadc_wiz_0 ]
   set_property -dict [ list \
-   CONFIG.ADC_CONVERSION_RATE {1000} \
+   CONFIG.ACQUISITION_TIME {10} \
+   CONFIG.ADC_CONVERSION_RATE {154} \
    CONFIG.CHANNEL_AVERAGING {256} \
-   CONFIG.DCLK_FREQUENCY {104} \
+   CONFIG.DCLK_FREQUENCY {8} \
    CONFIG.ENABLE_RESET {true} \
    CONFIG.ENABLE_VCCDDRO_ALARM {false} \
    CONFIG.ENABLE_VCCPAUX_ALARM {false} \
    CONFIG.ENABLE_VCCPINT_ALARM {false} \
+   CONFIG.EXTERNAL_MUX_CHANNEL {VP_VN} \
    CONFIG.INTERFACE_SELECTION {ENABLE_DRP} \
    CONFIG.OT_ALARM {false} \
+   CONFIG.SINGLE_CHANNEL_ACQUISITION_TIME {true} \
    CONFIG.SINGLE_CHANNEL_SELECTION {VP_VN} \
    CONFIG.USER_TEMP_ALARM {false} \
    CONFIG.VCCAUX_ALARM {false} \
@@ -277,22 +302,25 @@ proc create_root_design { parentCell } {
   # Create instance: xlslice_0, and set properties
   set xlslice_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_0 ]
   set_property -dict [ list \
-   CONFIG.DIN_FROM {15} \
+   CONFIG.DIN_FROM {14} \
    CONFIG.DIN_TO {8} \
    CONFIG.DIN_WIDTH {16} \
-   CONFIG.DOUT_WIDTH {8} \
+   CONFIG.DOUT_WIDTH {7} \
  ] $xlslice_0
 
   # Create instance: xlslice_1, and set properties
   set xlslice_1 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xlslice:1.0 xlslice_1 ]
   set_property -dict [ list \
-   CONFIG.DIN_FROM {7} \
+   CONFIG.DIN_FROM {6} \
    CONFIG.DIN_TO {0} \
    CONFIG.DIN_WIDTH {16} \
-   CONFIG.DOUT_WIDTH {8} \
+   CONFIG.DOUT_WIDTH {7} \
  ] $xlslice_1
 
   # Create port connections
+  connect_bd_net -net BinBCD_0_Decenas [get_bd_pins BinBCD_0/Decenas] [get_bd_pins Multiplexor_0/Decenas]
+  connect_bd_net -net BinBCD_0_Unidades [get_bd_pins BinBCD_0/Unidades] [get_bd_pins Multiplexor_0/Unidades]
+  connect_bd_net -net Cuantificador_0_Binario [get_bd_pins BinBCD_0/Binario] [get_bd_pins Cuantificador_0/Binario]
   connect_bd_net -net Decodificador_BCD_7S_0_Salidas [get_bd_ports leds] [get_bd_pins Decodificador_BCD_7S_0/Salidas]
   connect_bd_net -net Divisor_Freccuencia_0_Clk_Mux [get_bd_pins Divisor_Freccuencia_0/Clk_Mux] [get_bd_pins Multiplexor_0/Clk]
   connect_bd_net -net Multiplexor_0_BCD [get_bd_pins Decodificador_BCD_7S_0/Entradas] [get_bd_pins Multiplexor_0/BCD]
@@ -307,8 +335,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net xlconstant_0_dout [get_bd_pins xadc_wiz_0/daddr_in] [get_bd_pins xlconstant_0/dout]
   connect_bd_net -net xlconstant_1_dout [get_bd_pins xadc_wiz_0/den_in] [get_bd_pins xlconstant_1/dout]
   connect_bd_net -net xlconstant_2_dout [get_bd_pins xadc_wiz_0/dwe_in] [get_bd_pins xlconstant_2/dout]
-  connect_bd_net -net xlslice_0_Dout [get_bd_pins Multiplexor_0/Unidades] [get_bd_pins xlslice_0/Dout]
-  connect_bd_net -net xlslice_1_Dout [get_bd_pins Multiplexor_0/Decenas] [get_bd_pins xlslice_1/Dout]
+  connect_bd_net -net xlslice_0_Dout [get_bd_pins Cuantificador_0/ADC] [get_bd_pins xlslice_0/Dout]
 
   # Create address segments
 

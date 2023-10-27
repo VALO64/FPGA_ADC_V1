@@ -18,6 +18,8 @@
       "xlslice_1": "",
       "Divisor_Freccuencia_0": "",
       "Decodificador_BCD_7S_0": "",
+      "Cuantificador_0": "",
+      "BinBCD_0": "",
       "Multiplexor_0": ""
     },
     "ports": {
@@ -65,14 +67,17 @@
         "vlnv": "xilinx.com:ip:xadc_wiz:3.3",
         "xci_name": "design_1_xadc_wiz_0_0",
         "parameters": {
+          "ACQUISITION_TIME": {
+            "value": "10"
+          },
           "ADC_CONVERSION_RATE": {
-            "value": "1000"
+            "value": "154"
           },
           "CHANNEL_AVERAGING": {
             "value": "256"
           },
           "DCLK_FREQUENCY": {
-            "value": "104"
+            "value": "8"
           },
           "ENABLE_RESET": {
             "value": "true"
@@ -86,11 +91,17 @@
           "ENABLE_VCCPINT_ALARM": {
             "value": "false"
           },
+          "EXTERNAL_MUX_CHANNEL": {
+            "value": "VP_VN"
+          },
           "INTERFACE_SELECTION": {
             "value": "ENABLE_DRP"
           },
           "OT_ALARM": {
             "value": "false"
+          },
+          "SINGLE_CHANNEL_ACQUISITION_TIME": {
+            "value": "true"
           },
           "SINGLE_CHANNEL_SELECTION": {
             "value": "VP_VN"
@@ -202,7 +213,7 @@
         "xci_name": "design_1_xlslice_0_0",
         "parameters": {
           "DIN_FROM": {
-            "value": "15"
+            "value": "14"
           },
           "DIN_TO": {
             "value": "8"
@@ -211,7 +222,7 @@
             "value": "16"
           },
           "DOUT_WIDTH": {
-            "value": "8"
+            "value": "7"
           }
         }
       },
@@ -220,7 +231,7 @@
         "xci_name": "design_1_xlslice_1_0",
         "parameters": {
           "DIN_FROM": {
-            "value": "7"
+            "value": "6"
           },
           "DIN_TO": {
             "value": "0"
@@ -229,7 +240,7 @@
             "value": "16"
           },
           "DOUT_WIDTH": {
-            "value": "8"
+            "value": "7"
           }
         }
       },
@@ -286,6 +297,53 @@
           }
         }
       },
+      "Cuantificador_0": {
+        "vlnv": "xilinx.com:module_ref:Cuantificador:1.0",
+        "xci_name": "design_1_Cuantificador_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "Cuantificador",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "ADC": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "Binario": {
+            "direction": "O",
+            "left": "6",
+            "right": "0"
+          }
+        }
+      },
+      "BinBCD_0": {
+        "vlnv": "xilinx.com:module_ref:BinBCD:1.0",
+        "xci_name": "design_1_BinBCD_0_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "BinBCD",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "Binario": {
+            "direction": "I",
+            "left": "6",
+            "right": "0"
+          },
+          "Unidades": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          },
+          "Decenas": {
+            "direction": "O",
+            "left": "3",
+            "right": "0"
+          }
+        }
+      },
       "Multiplexor_0": {
         "vlnv": "xilinx.com:module_ref:Multiplexor:1.0",
         "xci_name": "design_1_Multiplexor_0_0",
@@ -301,12 +359,12 @@
           },
           "Unidades": {
             "direction": "I",
-            "left": "7",
+            "left": "3",
             "right": "0"
           },
           "Decenas": {
             "direction": "I",
-            "left": "7",
+            "left": "3",
             "right": "0"
           },
           "Catodo": {
@@ -400,22 +458,34 @@
           "Multiplexor_0/Clk"
         ]
       },
-      "xlslice_0_Dout": {
-        "ports": [
-          "xlslice_0/Dout",
-          "Multiplexor_0/Unidades"
-        ]
-      },
-      "xlslice_1_Dout": {
-        "ports": [
-          "xlslice_1/Dout",
-          "Multiplexor_0/Decenas"
-        ]
-      },
       "Multiplexor_0_Catodo": {
         "ports": [
           "Multiplexor_0/Catodo",
           "Catodo_0"
+        ]
+      },
+      "Cuantificador_0_Binario": {
+        "ports": [
+          "Cuantificador_0/Binario",
+          "BinBCD_0/Binario"
+        ]
+      },
+      "BinBCD_0_Unidades": {
+        "ports": [
+          "BinBCD_0/Unidades",
+          "Multiplexor_0/Unidades"
+        ]
+      },
+      "BinBCD_0_Decenas": {
+        "ports": [
+          "BinBCD_0/Decenas",
+          "Multiplexor_0/Decenas"
+        ]
+      },
+      "xlslice_0_Dout": {
+        "ports": [
+          "xlslice_0/Dout",
+          "Cuantificador_0/ADC"
         ]
       }
     },

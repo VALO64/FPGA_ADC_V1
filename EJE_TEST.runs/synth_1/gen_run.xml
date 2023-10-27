@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1698359770">
+<GenRun Id="synth_1" LaunchPart="xc7z007sclg400-1" LaunchTime="1698365645">
   <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
@@ -26,6 +26,20 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Multiplexor.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Cuantificador.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/BinBCD.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -91,4 +105,6 @@
   <BlockFileSet Type="BlockSrcs" Name="design_1_clk_wiz_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_Decodificador_BCD_7S_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_Divisor_Freccuencia_0_4"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_Cuantificador_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_BinBCD_0_0"/>
 </GenRun>
